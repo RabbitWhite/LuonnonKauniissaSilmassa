@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.hero-section {
+  height: 100vh;
+  background: url('images/hero-bg.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-container {
+  height: 400px;
+}
+
+.section-bg {
+  background: url('images/section-bg.jpg') no-repeat center center/cover;
+  padding: 50px 0;
+  color: white;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+iframe {
+  width: 100%;
+  height: 315px;
+}
