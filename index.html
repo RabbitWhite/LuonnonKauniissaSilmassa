@@ -23,17 +23,68 @@
     <h2 class="text-center mb-4">Gallery</h2>
     <div class="row gallery">
       <div class="col-md-4 mb-3">
-        <img src="images/gallery1.jpg" alt="Park View">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#locationModal1">
+          <img src="images/gallery1-thumb.jpg" alt="Park View" class="img-thumbnail">
+        </a>
       </div>
       <div class="col-md-4 mb-3">
-        <img src="images/gallery2.jpg" alt="Lake View">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#locationModal2">
+          <img src="images/gallery2-thumb.jpg" alt="Lake View" class="img-thumbnail">
+        </a>
       </div>
       <div class="col-md-4 mb-3">
-        <img src="images/gallery3.jpg" alt="Forest View">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#locationModal3">
+          <img src="images/gallery3-thumb.jpg" alt="Forest View" class="img-thumbnail">
+        </a>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Modal 1 -->
+<div class="modal fade" id="locationModal1" tabindex="-1" aria-labelledby="locationModal1Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="locationModal1Label">Park View</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Details about the park view location, activities, and highlights.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2 -->
+<div class="modal fade" id="locationModal2" tabindex="-1" aria-labelledby="locationModal2Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="locationModal2Label">Lake View</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Details about the lake view location, activities, and highlights.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="modal fade" id="locationModal3" tabindex="-1" aria-labelledby="locationModal3Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="locationModal3Label">Forest View</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Details about the forest view location, activities, and highlights.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Map Section -->
 <section class="container my-5">
