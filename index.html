@@ -19,53 +19,66 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#hero">Hero</a>
+          <a class="nav-link" href="#Frontpage">Frontpage</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#introduction">Introduction</a>
+          <a class="nav-link" href="#images">Images</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#gallery">Gallery</a>
+          <a class="nav-link" href="#videos">Videos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#map">Map</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#video">Video</a>
+          <a class="nav-link" href="#resources">Resources</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Hero Section -->
-<section id="hero" class="hero-section">
+<!-- Frontpage Section -->
+<section id="Frontpage" class="hero-section">
   <div>
     <h1>Luonnon kauniissa silmässä</h1>
-    <p>Liikkuvia ja liikkumattomia kesyttömiä kuvia.</p>
+   <blockquote>
+  "Heaven is under our feet as well as over our heads."
+</blockquote>
+<p>Henry David Thoreau</p>
   </div>
 </section>
 
-<!-- Gallery Section -->
+<!-- Images Section -->
 <section id="gallery" class="section-bg">
   <div class="container">
     <h2 class="text-center mb-4">Gallery</h2>
-    <div class="row gallery">
-      <div class="col-md-4 mb-3">
-        <a href="#" data-bs-toggle="modal" data-bs-target="#locationModal1">
-          <img src="images/gallery1-thumb.jpg" alt="Park View" class="img-thumbnail">
-        </a>
+    <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#locationModal1">
+            <img src="images/gallery1-thumb.jpg" alt="Park View" class="d-block w-100">
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#locationModal2">
+            <img src="images/gallery2-thumb.jpg" alt="Lake View" class="d-block w-100">
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#locationModal3">
+            <img src="images/gallery3-thumb.jpg" alt="Forest View" class="d-block w-100">
+          </a>
+        </div>
       </div>
-      <div class="col-md-4 mb-3">
-        <a href="#" data-bs-toggle="modal" data-bs-target="#locationModal2">
-          <img src="images/gallery2-thumb.jpg" alt="Lake View" class="img-thumbnail">
-        </a>
-      </div>
-      <div class="col-md-4 mb-3">
-        <a href="#" data-bs-toggle="modal" data-bs-target="#locationModal3">
-          <img src="images/gallery3-thumb.jpg" alt="Forest View" class="img-thumbnail">
-        </a>
-      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
   </div>
 </section>
@@ -115,6 +128,81 @@
   </div>
 </div>
 
+<!-- Video Section with Carousel -->
+<section id="video-carousel" class="section-bg">
+  <div class="container">
+    <h2 class="text-center mb-4">Videos</h2>
+    <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#videoModal1">
+            <img src="images/video1-thumb.jpg" alt="Video 1" class="d-block w-100">
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#videoModal2">
+            <img src="images/video2-thumb.jpg" alt="Video 2" class="d-block w-100">
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#videoModal3">
+            <img src="images/video3-thumb.jpg" alt="Video 3" class="d-block w-100">
+          </a>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Video Modals -->
+<div class="modal fade" id="videoModal1" tabindex="-1" aria-labelledby="videoModal1Label" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModal1Label">Video 1</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/5qap5aO4i9A" title="Video 1" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="videoModal2" tabindex="-1" aria-labelledby="videoModal2Label" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModal2Label">Video 2</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/5qap5aO4i9A" title="Video 2" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="videoModal3" tabindex="-1" aria-labelledby="videoModal3Label" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModal3Label">Video 3</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/5qap5aO4i9A" title="Video 3" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Map Section -->
 <section id="map" class="container my-5">
   <h2 class="text-center">Find Us on the Map</h2>
@@ -125,6 +213,18 @@
 <section id="video" class="container my-5">
   <h2 class="text-center mb-4">Experience the Adventure</h2>
   <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Video"></iframe>
+</section>
+
+<!-- Resources Section -->
+<section id="resources" class="container my-5">
+  <h2 class="text-center mb-4">Resources</h2>
+  <ul class="list-unstyled">
+    <li><a href="https://www.nationalparks.fi" target="_blank">Finnish National Parks Official Website</a></li>
+    <li><a href="https://www.visitfinland.com" target="_blank">Visit Finland - Outdoor Activities</a></li>
+    <li><a href="https://www.luontoon.fi" target="_blank">Explore Nature in Finland</a></li>
+    <li><a href="https://www.kayak.com" target="_blank">Kayak Rentals and Tours</a></li>
+    <li><a href="https://www.lonelyplanet.com/finland" target="_blank">Lonely Planet - Finland Guide</a></li>
+  </ul>
 </section>
 
 <!-- Footer -->
