@@ -54,3 +54,16 @@ iframe {
 .floating-menu a:hover {
   background-color: #0056b3;
 }
+
+.carousel-inner img {
+  max-height: 100px;
+  width: auto;
+}
+.modal-dialog {
+  max-width: 70%;
+  max-height: 70%;
+}
+.modal-content img {
+  width: 100%;
+  height: auto;
+}
