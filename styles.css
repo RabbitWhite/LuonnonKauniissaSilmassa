@@ -59,6 +59,7 @@ iframe {
   max-height: 100px;
   max-width: auto;
   object-fit: cover;
+  margin: 0 auto; /* Center images horizontally */
 }
 
 .modal-dialog {
