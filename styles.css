@@ -57,9 +57,8 @@ iframe {
 
 .carousel-inner img {
   max-height: 100px;
-  max-width: auto;
+  max-width:100%;
   object-fit: cover;
-  margin: 0 auto; /* Center images horizontally */
 }
 
 .modal-dialog {
@@ -72,4 +71,16 @@ iframe {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-container {
+  height: 400px;
+  width: 100%;
 }
