@@ -56,9 +56,9 @@ iframe {
 }
 
 .carousel-inner img {
-  max-height: 100px;
-  max-width:100%;
-  object-fit: cover;
+  max-height: 40vh;
+  width: auto;
+  margin: 0 auto;
 }
 
 .modal-dialog {
