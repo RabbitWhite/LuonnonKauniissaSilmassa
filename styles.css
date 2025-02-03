@@ -73,6 +73,22 @@ iframe {
   object-fit: contain;
 }
 
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Optional: adds spacing between elements */
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-body video {
+  max-width: 75vw !important;
+  max-height: 75vh !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
 section {
   min-height: 100vh;
   display: flex;
