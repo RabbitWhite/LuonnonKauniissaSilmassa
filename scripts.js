@@ -52,5 +52,5 @@ function goToMap(lat, lng) {
   // Delay the scroll action to allow the modal to fully close
   setTimeout(() => {
     document.getElementById('map').scrollIntoView({ behavior: 'smooth' });
-  }, 300); // Adjust the delay as needed (e.g., 300ms to 500ms)
+  }, 500); // Adjust the delay as needed (e.g., 300ms to 500ms)
 }

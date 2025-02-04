@@ -98,15 +98,25 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <ul>
-          <li><strong>Name:</strong> Video 3 Location</li>
-          <li><strong>Date Taken:</strong> 2023-08-15</li>
-          <a href="#" onclick="goToMap(45.6789, -122.3456)">
-            Latitude: 45.6789, Longitude: -122.3456
-          </a>
-        </ul>
-        <p>Details about the park view location, activities, and highlights.</p>
-        <img src="content/images/gallery1-thumb.jpg" alt="Forest View" class="img-fluid">
+        <!-- Media container: image or video goes here -->
+        <div class="media-container">
+          <img src="content/images/gallery2-thumb.jpg" alt="Park View">
+          <!-- For video, use:
+          <video controls>
+            <source src="content/videos/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          -->
+        </div>
+        <!-- Details container: any text/details below the media -->
+        <div class="details-container">
+          <ul>
+            <li><strong>Name:</strong> Lake View</li>
+            <li><strong>Date Taken:</strong> 2023-08-15</li>
+            <li><strong>Coordinates:</strong> Latitude: 46.1234, Longitude: -123.4567</li>
+          </ul>
+          <p>Details about the lake view location, activities, and highlights.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -199,15 +209,23 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <ul>
-          <li><strong>Name:</strong> Video 3 Location</li>
-          <li><strong>Date Taken:</strong> 2023-08-15</li>
-          <li><strong>Coordinates:</strong> Latitude: 45.6789, Longitude: -122.3456</li>
-        </ul>
-        <video controls style="width: 100%;">
-          <source src="content/videos/video1-thumb_C.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <div class="media-container">
+          <video controls>
+            <source src="content/videos/video1-thumb_C.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <!-- Details container: any text/details below the media -->
+        <div class="details-container">
+          <ul>
+            <li><strong>Name:</strong> Lake View</li>
+            <li><strong>Date Taken:</strong> 2023-08-15</li>
+            <li><strong>Coordinates:</strong> <a href="#" onclick="goToMap(45.6789, -122.3456)">
+              Latitude: 45.6789, Longitude: -122.3456
+            </a></li>
+          </ul>
+          <p>Details about the lake view location, activities, and highlights.</p>
+        </div>
       </div>
     </div>
   </div>

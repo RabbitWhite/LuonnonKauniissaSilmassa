@@ -12,14 +12,22 @@ body {
   justify-content: center;
 }
 
-.map-container {
-  height: 400px;
-}
-
 .section-bg {
   background: url('images/section-bg.jpg') no-repeat center center/cover;
   padding: 50px 0;
   color: white;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-container {
+  height: 400px;
+  width: 100%;
 }
 
 .gallery img {
@@ -61,6 +69,62 @@ iframe {
   margin: 0 auto;
 }
 
+/* Modal dimensions: always 75% of the viewport */
+.modal-dialog {
+  width: 75vw;
+  height: 75vh;
+  max-width: 75vw;
+  max-height: 75vh;
+  margin: auto;
+}
+
+.modal-content {
+  height: 100%;
+}
+
+/* Use a grid layout for the modal body with two rows:
+   - the media container takes the available free space (1fr)
+   - details take auto height */
+.modal-body {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+  padding: 0;  /* remove extra Bootstrap padding */
+  overflow: hidden;
+}
+
+/* The media container centers its content and hides any overflow */
+.media-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* The media (image or video) scales proportionally
+   without being forced to fill a fixed height or width */
+.media-container img,
+.media-container video {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Optional details styling */
+.details-container {
+  padding: 1rem;
+  overflow-y: auto;
+  background: #f8f8f8;
+  color: #333;
+}
+
+/*
+
+
+
 .modal-dialog {
   max-width: 70%;
   max-height: 70%;
@@ -76,7 +140,7 @@ iframe {
 .modal-body {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Optional: adds spacing between elements */
+  gap: 1rem; /* Optional: adds spacing between elements 
   align-items: center;
   justify-content: center;
 }
@@ -88,15 +152,4 @@ iframe {
   height: auto !important;
   object-fit: contain;
 }
-
-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.map-container {
-  height: 400px;
-  width: 100%;
-}
+*/
