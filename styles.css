@@ -68,8 +68,7 @@ iframe {
   width: auto;
   margin: 0 auto;
 }
-
-/* Modal dimensions: always 75% of the viewport */
+/* Desktop (default) settings for the modal */
 .modal-dialog {
   width: 75vw;
   height: 75vh;
@@ -82,43 +81,57 @@ iframe {
   height: 100%;
 }
 
-/* Use a grid layout for the modal body with two rows:
-   - the media container takes the available free space (1fr)
-   - details take auto height */
+/* Use flexbox in the modal body to stack media and details vertically */
 .modal-body {
-  display: grid;
-  grid-template-rows: 1fr auto;
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  padding: 0;  /* remove extra Bootstrap padding */
+  padding: 0;      /* Remove extra Bootstrap padding */
   overflow: hidden;
 }
 
-/* The media container centers its content and hides any overflow */
+/* The media container will fill available space by default */
 .media-container {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-/* The media (image or video) scales proportionally
-   without being forced to fill a fixed height or width */
+/* Images and videos should scale without cropping */
 .media-container img,
 .media-container video {
   max-width: 100%;
   max-height: 100%;
-  width: auto;
-  height: auto;
   object-fit: contain;
   display: block;
 }
 
-/* Optional details styling */
+/* The details container shows extra text and uses only as much space as needed */
 .details-container {
   padding: 1rem;
-  overflow-y: auto;
   background: #f8f8f8;
-  color: #333;
+  overflow-y: auto;
+}
+
+/* --- Mobile Adjustments --- */
+/* On smaller screens, adjust the modal to use more of the viewport and split the space with fixed proportions */
+@media (max-width: 768px) {
+  .modal-dialog {
+    width: 95vw;
+    height: 95vh;
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+  /* Force the media container to always use 60% of the modal height */
+  .media-container {
+    flex: 0 0 60%;
+  }
+  /* The details container will take the remaining 40% */
+  .details-container {
+    flex: 0 0 40%;
+  }
 }
 
 /*
