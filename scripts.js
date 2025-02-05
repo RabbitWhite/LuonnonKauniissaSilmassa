@@ -54,3 +54,39 @@ function goToMap(lat, lng) {
     document.getElementById('map').scrollIntoView({ behavior: 'smooth' });
   }, 500); // Adjust the delay as needed (e.g., 300ms to 500ms)
 }
+
+document.addEventListener('click', function(e) {
+  if (e.target && e.target.classList.contains('open-modal')) {
+    // Grab the clicked button and its data attributes
+    var btn = e.target;
+    var title = btn.getAttribute('data-title');
+    var media = btn.getAttribute('data-media');
+    var date = btn.getAttribute('data-date');
+    var coordinates = btn.getAttribute('data-coordinates');
+    var description = btn.getAttribute('data-description');
+
+    // Update modal title
+    document.getElementById('universalModalLabel').textContent = title;
+
+    // Determine if the media is video or image based on file extension
+    var mediaContainer = document.querySelector('#universalModal .media-container');
+    if (media.match(/\.(mp4|webm|ogg)$/i)) {
+      mediaContainer.innerHTML = '<video controls style="width:100%; height:100%; object-fit:contain;">' +
+                                 '<source src="' + media + '" type="video/mp4">' +
+                                 'Your browser does not support the video tag.' +
+                                 '</video>';
+    } else {
+      mediaContainer.innerHTML = '<img src="' + media + '" alt="' + title + '" style="width:100%; height:100%; object-fit:contain;">';
+    }
+
+    // Update details
+    document.querySelector('.modal-date').textContent = "Date Taken: " + date;
+    document.querySelector('.modal-coordinates').textContent = "Coordinates: " + coordinates;
+    document.querySelector('.modal-description').textContent = description;
+
+    // Show the modal (using Bootstrap 5's JS API)
+    var modalEl = document.getElementById('universalModal');
+    var modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+    modal.show();
+  }
+});
