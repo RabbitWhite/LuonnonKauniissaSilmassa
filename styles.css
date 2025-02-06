@@ -1,15 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
 body {
   font-family: Arial, sans-serif;
 }
-
+/*
 .hero-section {
   height: 100vh;
   background: url('images/hero-bg.jpg') no-repeat center center/cover;
   color: white;
   text-align: center;
+  text-shadow: -2px -2px 0 black,  
+                  2px -2px 0 black,
+                 -2px  2px 0 black,
+                  2px  2px 0 black;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+*/
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url('images/hero-bg.jpg') center/cover no-repeat;
+  background-size: cover;
+}
+
+/* Inverted radial fade effect */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 30%);
+  pointer-events: none; /* Ensures it does not interfere */
+  z-index: 1;
+}
+
+/* Ensuring the text stays visible */
+.hero-text {
+  position: relative;
+  color: black; /* Adjust for readability */
+  font-family: "Lora", serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  z-index: 2; /* Ensures it's above the overlay */
+  max-width: 60%;
+  
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 
 .map-container {
