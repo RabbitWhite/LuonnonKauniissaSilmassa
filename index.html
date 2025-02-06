@@ -66,6 +66,42 @@
     <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
+          <div class="text-center">
+            <img src="content/images/gallery1-thumb.jpg" alt="Image Title" class="mx-auto d-block">
+            <button class="open-modal mt-2"
+                    data-title="Image Title1"
+                    data-media="content/images/gallery1-thumb.jpg"
+                    data-date="2023-08-15"
+                    data-coordinates="45.6789, -122.3456"
+                    data-description="Details about this image.">
+              View Details
+            </button>
+        </div>
+        </div>
+        <div class="carousel-item">
+          <img src="content/images/gallery2-thumb.jpg" alt="Image Title">
+          <button class="open-modal"
+                  data-title="Image Title2"
+                  data-media="content/images/gallery2-thumb.jpg"
+                  data-date="2023-08-15"
+                  data-coordinates="45.6789, -122.3456"
+                  data-description="Details about this image.">
+            View Details
+          </button>
+        </div>
+        <div class="carousel-item">
+          <img src="content/images/gallery3-thumb.jpg" alt="Image Title">
+          <button class="open-modal"
+                  data-title="Image Title3"
+                  data-media="content/images/gallery3-thumb.jpg"
+                  data-date="2023-08-15"
+                  data-coordinates="45.6789, -122.3456"
+                  data-description="Details about this image.">
+            View Details
+          </button>
+        </div>
+        <!--
+        <div class="carousel-item active">
           <a href="#" data-bs-toggle="modal" data-bs-target="#locationModal1">
             <img src="content/images/gallery1-thumb.jpg" alt="Park View"  class="d-block mx-auto">
           </a>
@@ -79,7 +115,7 @@
           <a href="#" data-bs-toggle="modal" data-bs-target="#locationModal3">
             <img src="content/images/gallery3-thumb.jpg" alt="Forest View"  class="d-block mx-auto">
           </a>
-        </div>
+        </div>-->
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -93,7 +129,33 @@
   </div>
 </section>
 
-<!-- Modal 1 -->
+<!-- Single Universal Modal -->
+<div class="modal fade" id="universalModal" tabindex="-1" aria-labelledby="universalModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="universalModalLabel">Title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Media Container (image or video will be injected here) -->
+        <div class="media-container" style="width:100%; height:60%;">
+          <!-- Dynamic media content goes here -->
+        </div>
+        <!-- Details Container -->
+        <div class="details-container" style="padding:1rem;">
+          <ul>
+            <li class="modal-date"></li>
+            <li class="modal-coordinates"></li>
+          </ul>
+          <p class="modal-description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!----
+<!-- Modal 1 --
 <div class="modal fade" id="locationModal1" tabindex="-1" aria-labelledby="locationModal1Label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -102,14 +164,31 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Details about the park view location, activities, and highlights.</p>
-        <img src="content/images/gallery1-thumb.jpg" alt="Forest View" class="img-fluid">
+        <!-- Media container: image or video goes here --
+        <div class="media-container">
+          <img src="content/images/gallery2-thumb.jpg" alt="Park View">
+          <!-- For video, use:
+          <video controls>
+            <source src="content/videos/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          -->
+        </div>
+        <!-- Details container: any text/details below the media --
+        <div class="details-container">
+          <ul>
+            <li><strong>Name:</strong> Lake View</li>
+            <li><strong>Date Taken:</strong> 2023-08-15</li>
+            <li><strong>Coordinates:</strong> Latitude: 46.1234, Longitude: -123.4567</li>
+          </ul>
+          <p>Details about the lake view location, activities, and highlights.</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal 2 -->
+<!- Modal 2 --
 <div class="modal fade" id="locationModal2" tabindex="-1" aria-labelledby="locationModal2Label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -118,14 +197,26 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Details about the lake view location, activities, and highlights.</p>
-        <img src="content/images/gallery2-thumb.jpg" alt="Park View" class="img-fluid">
+        <div class="media-container">
+          <img src="content/images/gallery2-thumb.jpg" alt="Park View">
+          <!- For video, use:
+          <video controls>
+            <source src="content/videos/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          --
+        </div>
+        <ul>
+          <li><strong>Name:</strong> Video 3 Location</li>
+          <li><strong>Date Taken:</strong> 2023-08-15</li>
+          <li><strong>Coordinates:</strong> Latitude: 45.6789, Longitude: -122.3456</li>
+        </ul>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal 3 -->
+<!- Modal 3 --
 <div class="modal fade" id="locationModal3" tabindex="-1" aria-labelledby="locationModal3Label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -134,13 +225,25 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Details about the forest view location, activities, and highlights.</p>
-        <img src="content/images/gallery2-thumb.jpg" alt="Lake View" class="img-fluid">
+        <div class="media-container">
+          <img src="content/images/gallery3-thumb.jpg" alt="Park View">
+          <!- For video, use:
+          <video controls>
+            <source src="content/videos/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          --
+        </div>
+        <ul>
+          <li><strong>Name:</strong> Video 3 Location</li>
+          <li><strong>Date Taken:</strong> 2023-08-15</li>
+          <li><strong>Coordinates:</strong> Latitude: 45.6789, Longitude: -122.3456</li>
+        </ul>
       </div>
     </div>
   </div>
 </div>
-
+-->
 <section id="videos" class="section-bg">
   <div class="container">
     <h2 class="text-center mb-4">Videos</h2>
@@ -186,10 +289,23 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <video controls style="width: 100%;">
-          <source src="content/videos/video1-thumb_C.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <div class="media-container">
+          <video controls>
+            <source src="content/videos/video1-thumb_C.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <!-- Details container: any text/details below the media -->
+        <div class="details-container">
+          <ul>
+            <li><strong>Name:</strong> Lake View</li>
+            <li><strong>Date Taken:</strong> 2023-08-15</li>
+            <li><strong>Coordinates:</strong> <a href="#" onclick="goToMap(45.6789, -122.3456)">
+              Latitude: 45.6789, Longitude: -122.3456
+            </a></li>
+          </ul>
+          <p>Details about the lake view location, activities, and highlights.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -203,10 +319,17 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <video controls style="width: 100%;">
-          <source src="content/videos/video2-thumb_C.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <div class="media-container">
+          <video controls>
+            <source src="content/videos/video2-thumb_C.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <ul>
+          <li><strong>Name:</strong> Video 3 Location</li>
+          <li><strong>Date Taken:</strong> 2023-08-15</li>
+          <li><strong>Coordinates:</strong> Latitude: 45.6789, Longitude: -122.3456</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -220,10 +343,17 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <video controls style="width: 100%;">
-          <source src="content/videos/video3-thumb_C.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <div class="media-container">
+          <video controls>
+            <source src="content/videos/video3-thumb_C.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <ul>
+          <li><strong>Name:</strong> Lake View</li>
+          <li><strong>Date Taken:</strong> 2023-08-15</li>
+          <li><strong>Coordinates:</strong> Latitude: 46.1234, Longitude: -123.4567</li>
+        </ul>
       </div>
     </div>
   </div>
