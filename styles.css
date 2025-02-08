@@ -211,3 +211,36 @@ iframe {
   object-fit: contain;
 }
 */
+/* Ensure the clickable container wraps only its content */
+.open-modal {
+  display: inline-block; /* shrink wraps the image */
+  position: relative;
+  cursor: pointer;
+}
+
+/* Make the image fill the container and behave as a block */
+.open-modal img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Style the overlay to cover just the image and hide by default */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  opacity: 0;                 /* hidden initially */
+  transition: opacity 0.3s ease;
+  pointer-events: none;       /* allow clicks to pass to the container */
+}
+
+/* On hover, fade in the overlay */
+.open-modal:hover .overlay {
+  opacity: 1;
+}

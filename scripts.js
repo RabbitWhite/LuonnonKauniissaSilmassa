@@ -56,19 +56,19 @@ function goToMap(lat, lng) {
 }
 
 document.addEventListener('click', function(e) {
-  if (e.target && e.target.classList.contains('open-modal')) {
-    // Grab the clicked button and its data attributes
-    var btn = e.target;
-    var title = btn.getAttribute('data-title');
-    var media = btn.getAttribute('data-media');
-    var date = btn.getAttribute('data-date');
-    var coordinates = btn.getAttribute('data-coordinates');
-    var description = btn.getAttribute('data-description');
+  // Check if the clicked element is (or is inside) an element with the class "open-modal"
+  var modalContainer = e.target.closest('.open-modal');
+  if (modalContainer) {
+    // Retrieve data attributes from the container
+    var title = modalContainer.getAttribute('data-title');
+    var media = modalContainer.getAttribute('data-media');
+    var date = modalContainer.getAttribute('data-date');
+    var coordinates = modalContainer.getAttribute('data-coordinates');
+    var description = modalContainer.getAttribute('data-description');
 
-    // Update modal title
+    // Update your universal modal (assuming you have a modal with these placeholders)
     document.getElementById('universalModalLabel').textContent = title;
-
-    // Determine if the media is video or image based on file extension
+    
     var mediaContainer = document.querySelector('#universalModal .media-container');
     if (media.match(/\.(mp4|webm|ogg)$/i)) {
       mediaContainer.innerHTML = '<video controls style="width:100%; height:100%; object-fit:contain;">' +
@@ -78,15 +78,14 @@ document.addEventListener('click', function(e) {
     } else {
       mediaContainer.innerHTML = '<img src="' + media + '" alt="' + title + '" style="width:100%; height:100%; object-fit:contain;">';
     }
-
-    // Update details
+    
     document.querySelector('.modal-date').textContent = "Date Taken: " + date;
     document.querySelector('.modal-coordinates').textContent = "Coordinates: " + coordinates;
     document.querySelector('.modal-description').textContent = description;
-
-    // Show the modal (using Bootstrap 5's JS API)
+    
+    // Open the modal using Bootstrap's modal API
     var modalEl = document.getElementById('universalModal');
     var modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
     modal.show();
   }
-});
+}); 
