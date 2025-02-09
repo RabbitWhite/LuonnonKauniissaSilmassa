@@ -89,3 +89,80 @@ document.addEventListener('click', function(e) {
     modal.show();
   }
 }); 
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Fetch the JSON file
+  fetch('images.json')
+    .then(response => response.json())
+    .then(data => {
+      const carouselInner = document.querySelector('.carousel-inner');
+      
+      data.forEach((item, index) => {
+        // Create the carousel item container
+        const carouselItem = document.createElement('div');
+        carouselItem.classList.add('carousel-item');
+        // Mark the first item as active
+        if (index === 0) {
+          carouselItem.classList.add('active');
+        }
+      
+        // Create the inner HTML for the item, including centering classes
+        carouselItem.innerHTML = `
+        <div class="text-center">
+          <div class="open-modal position-relative" 
+               data-title="${item.title}"
+               data-media="${item.media}"
+               data-date="${item.date}"
+               data-coordinates="${item.coordinates}"
+               data-description="${item.description}">
+            <img src="${item.media}" alt="${item.title}" class="img-responsive mx-auto d-block">
+            <div class="overlay">
+              <span>Details</span>
+            </div>
+          </div>
+        </div>
+        `;
+      
+        // Append the item to the carousel inner container
+        carouselInner.appendChild(carouselItem);
+      });
+    })
+    .catch(error => console.error('Error loading gallery data:', error));
+  
+  // Add event listener to open the modal when an image is clicked
+  document.addEventListener('click', function(e) {
+    const modalContainer = e.target.closest('.open-modal');
+    if (modalContainer) {
+      // Retrieve the data from the element
+      const title = modalContainer.getAttribute('data-title');
+      const media = modalContainer.getAttribute('data-media');
+      const date = modalContainer.getAttribute('data-date');
+      const coordinates = modalContainer.getAttribute('data-coordinates');
+      const description = modalContainer.getAttribute('data-description');
+
+      // Update the universal modal (assumes your modal has matching placeholders)
+      document.getElementById('universalModalLabel').textContent = title;
+
+      // Update media content in the modal (you can adapt to handle video or image)
+      const mediaContainer = document.querySelector('#universalModal .media-container');
+      if (media.match(/\.(mp4|webm|ogg)$/i)) {
+        mediaContainer.innerHTML = `<video controls style="width:100%; height:100%; object-fit:contain;">
+                                      <source src="${media}" type="video/mp4">
+                                      Your browser does not support the video tag.
+                                    </video>`;
+      } else {
+        mediaContainer.innerHTML = `<img src="${media}" alt="${title}" style="width:100%; height:100%; object-fit:contain;">`;
+      }
+      
+      // Update details in the modal
+      document.querySelector('.modal-date').textContent = "Date Taken: " + date;
+      document.querySelector('.modal-coordinates').textContent = "Coordinates: " + coordinates;
+      document.querySelector('.modal-description').textContent = description;
+      
+      // Open the modal using Bootstrap's API
+      var modalEl = document.getElementById('universalModal');
+      var modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+      modal.show();
+    }
+  });
+});
