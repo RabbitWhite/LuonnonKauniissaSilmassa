@@ -1,0 +1,16 @@
+[
+    {
+      "title": "Video Title1",
+      "media": "content/videos/video1-thumb_C.mp4",
+      "date": "2023-08-15",
+      "coordinates": "45.6789, -122.3456",
+      "description": "Details about this image."
+    },
+    {
+        "title": "Video Title4",
+        "media": "content/videos/video2-thumb_C.mp4",
+        "date": "2023-08-15",
+        "coordinates": "45.6789, -122.3456",
+        "description": "Details about this image 4."
+    }
+  ]
