@@ -114,7 +114,7 @@ iframe {
 
 .modal-content {
   height: 100%;
-  background: #726161; /*url('path/to/pattern.png') repeat; /* Update path/to/pattern.png as needed */
+  background: #726161; /* Update with your pattern URL if needed */
   border: none;
   border-radius: 10px;
   overflow: hidden;
@@ -171,6 +171,13 @@ iframe {
   overflow-y: auto;
 }
 
+/* Remove list markers from details list */
+.details-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* Mobile Adjustments for Modal */
 @media (max-width: 768px) {
   .modal-dialog {
@@ -184,12 +191,6 @@ iframe {
   }
   .details-container {
     flex: 0 0 40%;
-  }
-
-  .details-container ul {
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
   }
 }
 
