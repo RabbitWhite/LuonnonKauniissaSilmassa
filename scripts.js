@@ -102,6 +102,9 @@ document.addEventListener('DOMContentLoaded', function() {
           const carouselItem = document.createElement('div');
           carouselItem.classList.add('carousel-item');
           if (index === 0) carouselItem.classList.add('active');
+
+          // Use preview image if available, else fallback to media (for images)
+          const thumbSrc = item.preview ? item.preview : item.media;
           
           // Build the inner HTML with centering and overlay classes
           carouselItem.innerHTML = `
@@ -112,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
                    data-date="${item.date}"
                    data-coordinates="${item.coordinates}"
                    data-description="${item.description}">
-                <img src="${item.media}" alt="${item.title}" class="img-responsive mx-auto d-block">
+                <img src="${thumbSrc}" alt="${item.title}" class="img-responsive mx-auto d-block">
                 <div class="overlay">
                   <span>Details</span>
                 </div>
