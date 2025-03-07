@@ -123,26 +123,29 @@ iframe {
 /* Modal Header */
 .modal-header {
   display: flex;
-  justify-content: center; /* center the title container */
   align-items: center;
-  position: relative; /* enable absolute positioning for the close button */
+  justify-content: center; /* centers the content */
+  position: relative; /* allows absolute positioning of the close button */
   background: #726161;
   padding: 1rem;
   border-bottom: none;
 }
 
-.modal-title {
-  font-family: 'Helvetica Neue', sans-serif;
-  font-size: 1.75rem;
-  margin: 0;
+.modal-title-container {
+  flex: 1;         /* takes up all available space */
   text-align: center;
 }
 
-/* Position the close button in the top-right corner */
-.modal-header .btn-close {
+.modal-title {
+  margin: 0;
+}
+
+.btn-close {
   position: absolute;
-  right: 1rem;
-  top: 1rem;
+  right: 1rem;     /* adjust spacing as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  flex: 0 0 auto;  /* ensures it only takes up its own space */
 }
 
 /* Modal Body */
