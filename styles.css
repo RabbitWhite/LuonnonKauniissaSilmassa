@@ -122,11 +122,13 @@ iframe {
 
 /* Modal Header */
 .modal-header {
+  display: flex;
+  justify-content: center; /* center the title container */
+  align-items: center;
+  position: relative; /* enable absolute positioning for the close button */
   background: #726161;
-  color: #fff;
-  text-align: center;
-  border-bottom: none;
   padding: 1rem;
+  border-bottom: none;
 }
 
 .modal-title {
@@ -134,6 +136,13 @@ iframe {
   font-size: 1.75rem;
   margin: 0;
   text-align: center;
+}
+
+/* Position the close button in the top-right corner */
+.modal-header .btn-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
 }
 
 /* Modal Body */
