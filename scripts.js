@@ -54,7 +54,7 @@ function goToMap(lat, lng) {
     document.getElementById('map').scrollIntoView({ behavior: 'smooth' });
   }, 500); // Adjust the delay as needed (e.g., 300ms to 500ms)
 }
-
+/*
 document.addEventListener('click', function(e) {
   // Check if the clicked element is (or is inside) an element with the class "open-modal"
   var modalContainer = e.target.closest('.open-modal');
@@ -88,7 +88,81 @@ document.addEventListener('click', function(e) {
     var modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
     modal.show();
   }
-}); 
+});
+*/
+document.addEventListener('DOMContentLoaded', function() {
+  // Helper function to load a carousel from JSON
+  function loadCarousel(jsonUrl, carouselId) {
+    fetch(jsonUrl)
+      .then(response => response.json())
+      .then(data => {
+        const carouselInner = document.querySelector(`#${carouselId} .carousel-inner`);
+        data.forEach((item, index) => {
+          // Create carousel item
+          const carouselItem = document.createElement('div');
+          carouselItem.classList.add('carousel-item');
+          if (index === 0) carouselItem.classList.add('active');
+          
+          // Build the inner HTML with centering and overlay classes
+          carouselItem.innerHTML = `
+            <div class="text-center">
+              <div class="open-modal position-relative" 
+                   data-title="${item.title}"
+                   data-media="${item.media}"
+                   data-date="${item.date}"
+                   data-coordinates="${item.coordinates}"
+                   data-description="${item.description}">
+                <img src="${item.media}" alt="${item.title}" class="img-responsive mx-auto d-block">
+                <div class="overlay">
+                  <span>Details</span>
+                </div>
+              </div>
+            </div>
+          `;
+          carouselInner.appendChild(carouselItem);
+        });
+      })
+      .catch(error => console.error('Error loading gallery data from ' + jsonUrl + ':', error));
+  }
+  
+  // Load the two carousels from separate JSON files
+  loadCarousel('images.json', 'galleryCarousel');
+  loadCarousel('videos.json', 'videoCarousel');
+  
+  // Event delegation to handle clicks on any open-modal container
+  document.addEventListener('click', function(e) {
+    const modalContainer = e.target.closest('.open-modal');
+    if (modalContainer) {
+      // Retrieve data attributes
+      const title = modalContainer.getAttribute('data-title');
+      const media = modalContainer.getAttribute('data-media');
+      const date = modalContainer.getAttribute('data-date');
+      const coordinates = modalContainer.getAttribute('data-coordinates');
+      const description = modalContainer.getAttribute('data-description');
+
+      // Update universal modal content
+      document.getElementById('universalModalLabel').textContent = title;
+      const mediaContainer = document.querySelector('#universalModal .media-container');
+      if (media.match(/\.(mp4|webm|ogg)$/i)) {
+        mediaContainer.innerHTML = `<video controls style="width:100%; height:100%; object-fit:contain;">
+                                      <source src="${media}" type="video/mp4">
+                                      Your browser does not support the video tag.
+                                    </video>`;
+      } else {
+        mediaContainer.innerHTML = `<img src="${media}" alt="${title}" style="width:100%; height:100%; object-fit:contain;">`;
+      }
+      
+      document.querySelector('.modal-date').textContent = "Date Taken: " + date;
+      document.querySelector('.modal-coordinates').textContent = "Coordinates: " + coordinates;
+      document.querySelector('.modal-description').textContent = description;
+      
+      // Open the modal using Bootstrap's API
+      const modalEl = document.getElementById('universalModal');
+      const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+      modal.show();
+    }
+  
+/*
 
 document.addEventListener('DOMContentLoaded', function() {
   // Fetch the JSON file
@@ -163,6 +237,6 @@ document.addEventListener('DOMContentLoaded', function() {
       var modalEl = document.getElementById('universalModal');
       var modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
       modal.show();
-    }
+    }*/
   });
 });
