@@ -3,21 +3,10 @@
 body {
   font-family: Arial, sans-serif;
 }
-/*
-.hero-section {
-  height: 100vh;
-  background: url('images/hero-bg.jpg') no-repeat center center/cover;
-  color: white;
-  text-align: center;
-  text-shadow: -2px -2px 0 black,  
-                  2px -2px 0 black,
-                 -2px  2px 0 black,
-                  2px  2px 0 black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-*/
+
+/* ======================
+   HERO SECTION & GENERAL LAYOUT
+   ====================== */
 .hero-section {
   position: relative;
   width: 100%;
@@ -27,10 +16,8 @@ body {
   align-items: center;
   text-align: center;
   background: url('images/hero-bg.jpg') center/cover no-repeat;
-  background-size: cover;
 }
 
-/* Inverted radial fade effect */
 .hero-section::before {
   content: "";
   position: absolute;
@@ -38,27 +25,25 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 30%);
-  pointer-events: none; /* Ensures it does not interfere */
+  background: radial-gradient(circle, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 30%);
+  pointer-events: none;
   z-index: 1;
 }
 
-/* Ensuring the text stays visible */
 .hero-text {
   position: relative;
-  color: black; /* Adjust for readability */
+  color: black;
   font-family: "Lora", serif;
   font-size: 0.75rem;
   font-weight: bold;
-  z-index: 2; /* Ensures it's above the overlay */
+  z-index: 2;
   max-width: 60%;
-  
   padding: 10px 20px;
   border-radius: 5px;
 }
 
 .section-bg {
-  background: url('images/section-bg.jpg') no-repeat center center/cover;
+  background: url('images/section-bg.jpg') center/cover no-repeat;
   padding: 50px 0;
   color: white;
 }
@@ -113,7 +98,12 @@ iframe {
   width: auto;
   margin: 0 auto;
 }
-/* Desktop (default) settings for the modal */
+
+/* ======================
+   MODAL STYLING
+   ====================== */
+
+/* Modal Dialog & Content */
 .modal-dialog {
   width: 75vw;
   height: 75vh;
@@ -124,18 +114,39 @@ iframe {
 
 .modal-content {
   height: 100%;
+  background: #f7f7f7 url('path/to/pattern.png') repeat; /* Update path/to/pattern.png as needed */
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-/* Use flexbox in the modal body to stack media and details vertically */
+/* Modal Header */
+.modal-header {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-align: center;
+  border-bottom: none;
+  padding: 1rem;
+}
+
+.modal-title {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+/* Modal Body */
 .modal-body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 0;      /* Remove extra Bootstrap padding */
+  padding: 0; /* Removes extra Bootstrap padding */
   overflow: hidden;
+  background: #fff;
+  text-align: center;
 }
 
-/* The media container will fill available space by default */
+/* Media Container inside Modal */
 .media-container {
   flex: 1;
   display: flex;
@@ -144,7 +155,6 @@ iframe {
   overflow: hidden;
 }
 
-/* Images and videos should scale without cropping */
 .media-container img,
 .media-container video {
   max-width: 100%;
@@ -153,15 +163,14 @@ iframe {
   display: block;
 }
 
-/* The details container shows extra text and uses only as much space as needed */
+/* Details Container inside Modal */
 .details-container {
   padding: 1rem;
   background: #f8f8f8;
   overflow-y: auto;
 }
 
-/* --- Mobile Adjustments --- */
-/* On smaller screens, adjust the modal to use more of the viewport and split the space with fixed proportions */
+/* Mobile Adjustments for Modal */
 @media (max-width: 768px) {
   .modal-dialog {
     width: 95vw;
@@ -169,78 +178,46 @@ iframe {
     max-width: 95vw;
     max-height: 95vh;
   }
-  /* Force the media container to always use 60% of the modal height */
   .media-container {
     flex: 0 0 60%;
   }
-  /* The details container will take the remaining 40% */
   .details-container {
     flex: 0 0 40%;
   }
 }
 
-/*
+/* ======================
+   CAROUSEL ITEM & OVERLAY STYLING
+   ====================== */
 
-
-
-.modal-dialog {
-  max-width: 70%;
-  max-height: 70%;
-  margin: auto;
-}
-
-.modal-content img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-}
-
-.modal-body {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem; /* Optional: adds spacing between elements 
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-body video {
-  max-width: 75vw !important;
-  max-height: 75vh !important;
-  width: auto !important;
-  height: auto !important;
-  object-fit: contain;
-}
-*/
-/* Ensure the clickable container wraps only its content */
+/* Clickable Container for Carousel Items */
 .open-modal {
-  display: inline-block; /* shrink wraps the image */
+  display: inline-block; /* Shrink-wraps the image */
   position: relative;
   cursor: pointer;
 }
 
-/* Make the image fill the container and behave as a block */
 .open-modal img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-/* Style the overlay to cover just the image and hide by default */
+/* Overlay styling to cover just the image */
 .overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   color: #fff;
   text-align: center;
   padding: 10px;
-  opacity: 0;                 /* hidden initially */
+  opacity: 0; /* Hidden initially */
   transition: opacity 0.3s ease;
-  pointer-events: none;       /* allow clicks to pass to the container */
+  pointer-events: none; /* Allow clicks to pass to the container */
 }
 
-/* On hover, fade in the overlay */
 .open-modal:hover .overlay {
   opacity: 1;
 }
