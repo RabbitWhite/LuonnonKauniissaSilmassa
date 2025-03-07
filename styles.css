@@ -122,7 +122,7 @@ iframe {
 
 /* Modal Header */
 .modal-header {
-  background: rgba(0, 0, 0, 0.7);
+  background: #726161;
   color: #fff;
   text-align: center;
   border-bottom: none;
@@ -142,7 +142,7 @@ iframe {
   height: 100%;
   padding: 0; /* Removes extra Bootstrap padding */
   overflow: hidden;
-  background: #fff;
+  background: #726161;
   text-align: center;
 }
 
@@ -166,7 +166,7 @@ iframe {
 /* Details Container inside Modal */
 .details-container {
   padding: 1rem;
-  background: #f8f8f8;
+  background: #726161;
   overflow-y: auto;
 }
 
