@@ -114,7 +114,7 @@ iframe {
 
 .modal-content {
   height: 100%;
-  background: #726161 url('images/section-bg.jpg') repeat; /* Update with your pattern URL if needed */
+  background: url('images/section-bg.jpg') repeat; /* Update with your pattern URL if needed */
   border: none;
   border-radius: 10px;
   overflow: hidden;
