@@ -179,7 +179,7 @@ iframe {
 /* Details Container inside Modal */
 .details-container {
   padding: 1rem;
-  background: url('images/section-bg.jpg') repeat; /* #726161;*/
+  background: url('images/seamless.jpg') repeat; /* #726161;*/
   overflow-y: auto;
 }
 
