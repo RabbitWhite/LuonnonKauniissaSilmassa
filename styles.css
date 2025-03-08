@@ -176,8 +176,7 @@ iframe {
   max-height: 100%;
   object-fit: contain;
   display: block;
-  border: 5px solid #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border: 3px solid black;
 }
 
 /* Details Container inside Modal */
@@ -204,6 +203,7 @@ iframe {
   }
   .media-container {
     flex: 0 0 60%;
+    width:fit-content;
   }
   .details-container {
     flex: 0 0 40%;
