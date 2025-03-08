@@ -113,8 +113,9 @@ iframe {
 }
 
 .modal-content {
+  position: relative;            /* Ensure pseudo-element positions relative to this */
   height: 100%;
-  background:black;
+  background: transparent;       /* Remove solid color to let the pseudo-element show */
   border: none;
   border-radius: 10px;
   overflow: hidden;
@@ -128,8 +129,8 @@ iframe {
   width: 100%;
   height: 100%;
   background: url('images/seamless.jpg') no-repeat center/cover;
-  opacity: 1;  /* Adjust opacity (0 to 1) for transparency */
-  z-index: -1;   /* Place it behind modal content */
+  opacity: 0.5;                  /* Set to a value less than 1 for semi-transparency */
+  z-index: -1;                   /* Place behind modal content */
 }
 
 /* Modal Header */
