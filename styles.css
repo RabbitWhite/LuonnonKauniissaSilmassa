@@ -138,11 +138,22 @@ iframe {
   align-items: center;
   justify-content: center; /* centers the content */
   position: relative; /* allows absolute positioning of the close button */
-  background: url('images/seamless.jpg') repeat;/* #726161;*/
+  background: black;
   padding: 1rem;
   border-bottom: none;
 }
 
+.modal-haeder::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/seamless.jpg') no-repeat center/cover;
+  opacity: 0.1;  /* Adjust opacity (0 to 1) for transparency */
+  z-index: -1;   /* Place it behind modal content */
+}
 .modal-title-container {
   flex: 1;         /* takes up all available space */
   text-align: center;
