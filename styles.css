@@ -163,11 +163,12 @@ iframe {
 
 /* Media Container inside Modal */
 .media-container {
-  flex: 1;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  width: fit-content; /* shrink-wrap to the content's width */
+  margin: 0 auto;     /* center the container horizontally */
 }
 
 .media-container img,
