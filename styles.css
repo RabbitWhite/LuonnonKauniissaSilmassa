@@ -109,12 +109,12 @@ iframe {
   height: 75vh;
   max-width: 75vw;
   max-height: 75vh;
-  margin: auto;
+  margin: 3rem auto; /* Adds a 3rem margin at the top (and bottom) */
 }
 
 .modal-content {
   height: 100%;
-  background: #726161; /* Update with your pattern URL if needed */
+  background: #726161 url('images/section-bg.jpg') repeat; /* Update with your pattern URL if needed */
   border: none;
   border-radius: 10px;
   overflow: hidden;
