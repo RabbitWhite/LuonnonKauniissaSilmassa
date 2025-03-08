@@ -126,7 +126,7 @@ iframe {
   align-items: center;
   justify-content: center; /* centers the content */
   position: relative; /* allows absolute positioning of the close button */
-  background: url('images/section-bg.jpg') repeat;/* #726161;*/
+  background: url('images/seamless.jpg') repeat;/* #726161;*/
   padding: 1rem;
   border-bottom: none;
 }
