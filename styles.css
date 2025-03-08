@@ -155,7 +155,7 @@ iframe {
   height: 100%;
   padding: 0; /* Removes extra Bootstrap padding */
   overflow: hidden;
-  background: url('images/section-bg.jpg') repeat;
+  background: url('images/seamless.jpg') repeat;
   text-align: center;
 }
 
