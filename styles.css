@@ -2,6 +2,14 @@
 
 body {
   font-family: Arial, sans-serif;
+  scroll-behavior: smooth;         /* Enables smooth scroll */
+  overflow-y: scroll;
+}
+
+.scroll-container {
+  scroll-snap-type: y mandatory;   /* Enable vertical snap */
+  overflow-y: scroll;
+  height: 100vh;                   /* Ensure container takes full height */
 }
 
 /* ======================
@@ -53,6 +61,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  scroll-snap-align: start; 
 }
 
 .map-container {
@@ -128,7 +137,7 @@ iframe {
   align-items: center;
   justify-content: center; /* centers the content */
   position: relative; /* allows absolute positioning of the close button */
-  background:rgba(128, 128, 128, 0.491);
+  background:rgba(128, 128, 128, 0.8);
   padding: 1rem;
   border-bottom: none;
 }
@@ -157,7 +166,7 @@ iframe {
   height: 100%;
   padding: 0; /* Removes extra Bootstrap padding */
   overflow: hidden;
-  background: rgba(128, 128, 128, 0.491);
+  background: rgba(128, 128, 128, 0.8);
   text-align: center;
 }
 
