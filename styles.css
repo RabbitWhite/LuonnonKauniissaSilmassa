@@ -124,7 +124,7 @@ iframe {
 .modal-content {
   position: relative;            /* Ensure pseudo-element positions relative to this */
   height: 100%;
-  background: rgba(128, 128, 128, 0.491);       /* Remove solid color to let the pseudo-element show */
+  background: rgba(128, 128, 128, 0.8);       /* Remove solid color to let the pseudo-element show */
   border: none;
   border-radius: 10px;
   overflow: hidden;
