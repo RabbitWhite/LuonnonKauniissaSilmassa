@@ -192,7 +192,7 @@ iframe {
 /* Details Container inside Modal */
 .details-container {
   padding: 1rem;
-  background: rgba(128, 128, 128, 0.491);
+  background: rgba(128, 128, 128, 0.8);
   overflow-y: auto;
 }
 
