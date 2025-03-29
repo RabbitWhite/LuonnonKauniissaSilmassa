@@ -110,12 +110,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const mediaContainer = document.querySelector('#universalModal .media-container');
     if (media.match(/\.(mp4|webm|ogg)$/i)) {
       mediaContainer.innerHTML = `
-        <video controls style="width:100%; height:100%; object-fit:contain;">
+        <video controls style="width:100%; height:100%; object-fit:cover;">
           <source src="${media}" type="video/mp4">
           Your browser does not support the video tag.
         </video>`;
     } else {
-      mediaContainer.innerHTML = `<img src="${media}" alt="${title}" style="width:100%; height:100%; object-fit:contain;">`;
+      mediaContainer.innerHTML = `<img src="${media}" alt="${title}" style="width:100%; height:100%; object-fit:cover;">`;
     }
 
     document.querySelector('.modal-date').textContent = "Date Taken: " + date;
