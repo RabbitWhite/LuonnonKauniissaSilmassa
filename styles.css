@@ -1,19 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
 
+/* ======================
+   BASE STYLES
+   ====================== */
 body {
   font-family: Arial, sans-serif;
-  scroll-behavior: smooth;         /* Enables smooth scroll */
+  scroll-behavior: smooth;      /* Enables smooth scroll */
   overflow-y: scroll;
 }
 
 .scroll-container {
-  scroll-snap-type: y mandatory;   /* Enable vertical snap */
+  scroll-snap-type: y mandatory; /* Enables vertical scroll snapping */
   overflow-y: scroll;
-  height: 100vh;                   /* Ensure container takes full height */
+  height: 100vh;
 }
 
 /* ======================
-   HERO SECTION & GENERAL LAYOUT
+   HERO SECTION
    ====================== */
 .hero-section {
   position: relative;
@@ -50,6 +53,9 @@ body {
   border-radius: 5px;
 }
 
+/* ======================
+   GENERAL SECTIONS
+   ====================== */
 .section-bg {
   background: url('images/section-bg.jpg') center/cover no-repeat;
   padding: 50px 0;
@@ -61,7 +67,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  scroll-snap-align: start; 
+  scroll-snap-align: start;
 }
 
 .map-container {
@@ -79,6 +85,9 @@ iframe {
   height: 315px;
 }
 
+/* ======================
+   FLOATING MENU
+   ====================== */
 .floating-menu {
   position: fixed;
   top: 50%;
@@ -102,6 +111,9 @@ iframe {
   background-color: #0056b3;
 }
 
+/* ======================
+   CAROUSEL
+   ====================== */
 .carousel-inner img {
   max-height: 40vh;
   width: auto;
@@ -109,41 +121,37 @@ iframe {
 }
 
 /* ======================
-   MODAL STYLING
+   MODAL
    ====================== */
-
-/* Modal Dialog & Content */
 .modal-dialog {
   width: 75vw;
   height: 75vh;
   max-width: 75vw;
   max-height: 75vh;
-  margin: 3rem auto; /* Adds a 3rem margin at the top (and bottom) */
+  margin: 3rem auto;
 }
 
 .modal-content {
-  position: relative;            /* Ensure pseudo-element positions relative to this */
+  position: relative;
   height: 100%;
-  background: rgba(128, 128, 128, 0.8);       /* Remove solid color to let the pseudo-element show */
+  background: rgba(128, 128, 128, 0.8);
   border: none;
   border-radius: 10px;
   overflow: hidden;
 }
 
-
-/* Modal Header */
 .modal-header {
   display: flex;
   align-items: center;
-  justify-content: center; /* centers the content */
-  position: relative; /* allows absolute positioning of the close button */
-  background:rgba(128, 128, 128, 0.8);
+  justify-content: center;
+  position: relative;
+  background: rgba(128, 128, 128, 0.8);
   padding: 1rem;
   border-bottom: none;
 }
 
 .modal-title-container {
-  flex: 1;         /* takes up all available space */
+  flex: 1;
   text-align: center;
 }
 
@@ -153,31 +161,29 @@ iframe {
 
 .btn-close {
   position: absolute;
-  right: 1rem;     /* adjust spacing as needed */
+  right: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  flex: 0 0 auto;  /* ensures it only takes up its own space */
+  flex: 0 0 auto;
 }
 
-/* Modal Body */
 .modal-body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 0; /* Removes extra Bootstrap padding */
+  padding: 0;
   overflow: hidden;
   background: rgba(128, 128, 128, 0.8);
   text-align: center;
 }
 
-/* Media Container inside Modal */
 .media-container {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  width: fit-content; /* shrink-wrap to the content's width */
-  margin: 0 auto;     /* center the container horizontally */
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .media-container img,
@@ -189,21 +195,21 @@ iframe {
   border: 3px solid black;
 }
 
-/* Details Container inside Modal */
 .details-container {
   padding: 1rem;
   background: rgba(128, 128, 128, 0.8);
   overflow-y: auto;
 }
 
-/* Remove list markers from details list */
 .details-container ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* Mobile Adjustments for Modal */
+/* ======================
+   MODAL RESPONSIVE
+   ====================== */
 @media (max-width: 768px) {
   .modal-dialog {
     width: 95vw;
@@ -211,23 +217,23 @@ iframe {
     max-width: 95vw;
     max-height: 95vh;
   }
+
   .media-container {
     flex: 0 0 60%;
-    width:fit-content;
+    width: fit-content;
   }
+
   .details-container {
     flex: 0 0 40%;
-    width:fit-content;
+    width: fit-content;
   }
 }
 
 /* ======================
-   CAROUSEL ITEM & OVERLAY STYLING
+   CAROUSEL ITEM OVERLAY
    ====================== */
-
-/* Clickable Container for Carousel Items */
 .open-modal {
-  display: inline-block; /* Shrink-wraps the image */
+  display: inline-block;
   position: relative;
   cursor: pointer;
 }
@@ -238,7 +244,6 @@ iframe {
   height: auto;
 }
 
-/* Overlay styling to cover just the image */
 .overlay {
   position: absolute;
   bottom: 0;
@@ -248,9 +253,9 @@ iframe {
   color: #fff;
   text-align: center;
   padding: 10px;
-  opacity: 0; /* Hidden initially */
+  opacity: 0;
   transition: opacity 0.3s ease;
-  pointer-events: none; /* Allow clicks to pass to the container */
+  pointer-events: none;
 }
 
 .open-modal:hover .overlay {

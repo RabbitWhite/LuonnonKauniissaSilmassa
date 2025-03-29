@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Luonnon kauniissa silmässä</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <!-- Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" />
+  <link href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
 </head>
 <body>
 
@@ -17,278 +20,131 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.html" style="margin-left: 10px;">
-      <img src="content/images/navbar-icon.jpg" alt="Finnish Parks Icon" class="img-fluid" style="height: 5vh; width: auto;">
+      <img src="content/images/navbar-icon.jpg" alt="Finnish Parks Icon" class="img-fluid" style="height: 5vh;" />
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#frontpage">Frontpage</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#images">Images</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#videos">Videos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#map">Map</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#resources">Resources</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="#frontpage">Frontpage</a></li>
+        <li class="nav-item"><a class="nav-link" href="#images">Images</a></li>
+        <li class="nav-item"><a class="nav-link" href="#videos">Videos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#map">Map</a></li>
+        <li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <div class="scroll-container">
-<!-- Frontpage Section -->
-<section id="frontpage" class="hero-section" class="hero-section">
-  <div class="hero-section">
+
+  <!-- Frontpage Section -->
+  <section id="frontpage" class="hero-section">
     <div class="hero-text">
-    <h1>Luonnon kauniissa silmässä</h1>
-    
-   <blockquote>
-  "Heaven is under our feet as well as over our heads."
-</blockquote>
-
-<p>Henry David Thoreau</p>
-  </div>
-</div>
-</section>
-
-<!-- Images Section -->
-<section id="images" class="section-bg">
-  <div class="container">
-    <h2 class="text-center mb-4">Images</h2>
-
-    <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <!-- Carousel items will be injected here -->
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <h1>Luonnon kauniissa silmässä</h1>
+      <blockquote>"Heaven is under our feet as well as over our heads."</blockquote>
+      <p>Henry David Thoreau</p>
     </div>
-    
-  </div>
-</section>
+  </section>
 
-<!-- Single Universal Modal -->
-<div class="modal fade" id="universalModal" tabindex="-1" aria-labelledby="universalModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="modal-title-container">
-          <h5 class="modal-title" id="universalModalLabel">Title</h5>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <!-- Images Section -->
+  <section id="images" class="section-bg">
+    <div class="container">
+      <h2 class="text-center mb-4">Images</h2>
+      <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner"><!-- Items injected via JS --></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <div class="modal-body">
-        <!-- Media Container (image or video will be injected here) -->
-        <div class="media-container" style="height:60%;">
-          <!-- Dynamic media content goes here -->
+    </div>
+  </section>
+
+  <!-- Universal Modal -->
+  <div class="modal fade" id="universalModal" tabindex="-1" aria-labelledby="universalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title-container">
+            <h5 class="modal-title" id="universalModalLabel">Title</h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <!-- Details Container -->
-        <div class="details-container" style="padding:1rem;">
-          <ul>
-            <li class="modal-date"></li>
-            <li class="modal-coordinates"></li>
-          </ul>
-          <p class="modal-description"></p>
+        <div class="modal-body">
+          <div class="media-container" style="height:60%;"></div>
+          <div class="details-container" style="padding:1rem;">
+            <ul>
+              <li class="modal-date"></li>
+              <li class="modal-coordinates"></li>
+            </ul>
+            <p class="modal-description"></p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!--
-<section id="videos" class="section-bg">
-  <div class="container">
-    <h2 class="text-center mb-4">Videos</h2>
-    <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <!- Video 1 Thumbnail --
-        <div class="carousel-item active">
-          <a href="#" data-bs-toggle="modal" data-bs-target="#videoModal1">
-            <img src="content/images/gallery1-thumb.jpg" alt="Video 1" class="d-block mx-auto">
-          </a>
-        </div>
-        <!- Video 2 Thumbnail --
-        <div class="carousel-item">
-          <a href="#" data-bs-toggle="modal" data-bs-target="#videoModal2">
-            <img src="content/images/gallery2-thumb.jpg" alt="Video 2" class="d-block mx-auto">
-          </a>
-        </div>
-        <!- Video 3 Thumbnail --
-        <div class="carousel-item">
-          <a href="#" data-bs-toggle="modal" data-bs-target="#videoModal3">
-            <img src="content/images/gallery3-thumb.jpg" alt="Video 3" class="d-block mx-auto">
-          </a>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </div>
-</section>
--->
-<section id="videos" class="section-bg">
-  <div class="container">
-    <h2 class="text-center mb-4">Videos</h2>
-    
-    <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <!-- Carousel items will be injected here -->
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    
-  </div>
-</section>
-
-<!-- Video Modals --
-<div class="modal fade" id="videoModal1" tabindex="-1" aria-labelledby="videoModal1Label" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="videoModal1Label">Video 1</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="media-container">
-          <video controls>
-            <source src="content/videos/video1-thumb_C.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <!- Details container: any text/details below the media --
-        <div class="details-container">
-          <ul>
-            <li><strong>Name:</strong> Lake View</li>
-            <li><strong>Date Taken:</strong> 2023-08-15</li>
-            <li><strong>Coordinates:</strong> <a href="#" onclick="goToMap(45.6789, -122.3456)">
-              Latitude: 45.6789, Longitude: -122.3456
-            </a></li>
-          </ul>
-          <p>Details about the lake view location, activities, and highlights.</p>
-        </div>
+  <!-- Videos Section -->
+  <section id="videos" class="section-bg">
+    <div class="container">
+      <h2 class="text-center mb-4">Videos</h2>
+      <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner"><!-- Items injected via JS --></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="modal fade" id="videoModal2" tabindex="-1" aria-labelledby="videoModal2Label" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="videoModal2Label">Video 2</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="media-container">
-          <video controls>
-            <source src="content/videos/video2-thumb_C.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <ul>
-          <li><strong>Name:</strong> Video 3 Location</li>
-          <li><strong>Date Taken:</strong> 2023-08-15</li>
-          <li><strong>Coordinates:</strong> Latitude: 45.6789, Longitude: -122.3456</li>
-        </ul>
-      </div>
+  <!-- Map Section -->
+  <section id="map" class="section-bg">
+    <div class="container">
+      <h2 class="text-center mb-4">Find Us on the Map</h2>
+      <div id="leafletMap" class="map-container" style="height: 100%;"></div>
     </div>
-  </div>
-</div>
+  </section>
 
-<div class="modal fade" id="videoModal3" tabindex="-1" aria-labelledby="videoModal3Label" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="videoModal3Label">Video 3</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="media-container">
-          <video controls>
-            <source src="content/videos/video3-thumb_C.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <ul>
-          <li><strong>Name:</strong> Lake View</li>
-          <li><strong>Date Taken:</strong> 2023-08-15</li>
-          <li><strong>Coordinates:</strong> Latitude: 46.1234, Longitude: -123.4567</li>
-        </ul>
-      </div>
+  <!-- Resources Section -->
+  <section id="resources" class="section-bg">
+    <div class="details-container">
+      <h2 class="mb-4" style="color: black">Resources</h2>
+      <ul class="list-unstyled d-flex flex-column align-items-start">
+        <li class="d-flex align-items-start mb-3">
+          <i class="fa-solid fa-leaf me-2" style="font-size: 48px; color: black;"></i>
+          <a href="https://www.nationalparks.fi" target="_blank">Finnish National Parks Official Website</a>
+        </li>
+        <li class="d-flex align-items-start mb-3">
+          <i class="fa-solid fa-leaf me-2" style="font-size: 48px; color: black;"></i>
+          <a href="https://www.visitfinland.com" target="_blank">Visit Finland - Outdoor Activities</a>
+        </li>
+        <li class="d-flex align-items-start mb-3">
+          <i class="fa-solid fa-leaf me-2" style="font-size: 48px; color: black;"></i>
+          <a href="https://www.luontoon.fi" target="_blank">Explore Nature in Finland</a>
+        </li>
+        <li class="d-flex align-items-start mb-3">
+          <i class="fa-solid fa-leaf me-2" style="font-size: 48px; color: black;"></i>
+          <a href="https://www.kayak.com" target="_blank">Kayak Rentals and Tours</a>
+        </li>
+        <li class="d-flex align-items-start">
+          <i class="fa-solid fa-leaf me-2" style="font-size: 48px; color: black;"></i>
+          <a href="https://www.lonelyplanet.com/finland" target="_blank">Lonely Planet - Finland Guide</a>
+        </li>
+      </ul>
     </div>
-  </div>
-</div>
-
--->
-<section id="map" class="section-bg">
-  <div class="container">
-    <h2 class="text-center mb-4">Find Us on the Map</h2>
-    <div id="leafletMap" class="map-container" style="height: 100%;"></div>
-  </div>
-</section>
-
-<!-- OpenStreetMap and Leaflet.js -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-
-<!-- Resources Section -->
-<section id="resources" class="section-bg">
-  <div class="details-container">
-    <h2 class="mb-4" style=" color: black">Resources</h2>
-    <ul class="list-unstyled d-flex flex-column align-items-start">
-      <li class="d-flex align-items-start mb-3">
-        <i class="fa-solid fa-leaf me-2" style="font-size: 48px; color: black;"></i>
-        <a href="https://www.nationalparks.fi" target="_blank">Finnish National Parks Official Website</a>
-      </li>
-      <li class="d-flex align-items-start mb-3">
-        <i class="fa-solid fa-leaf me-2" style="font-size: 48px; color: black;"></i>
-        <a href="https://www.visitfinland.com" target="_blank">Visit Finland - Outdoor Activities</a>
-      </li>
-      <li class="d-flex align-items-start mb-3">
-        <i class="fa-solid fa-leaf me-2" style="font-size: 48px; color: black;"></i>
-        <a href="https://www.luontoon.fi" target="_blank">Explore Nature in Finland</a>
-      </li>
-      <li class="d-flex align-items-start mb-3">
-        <i class="fa-solid fa-leaf me-2" style="font-size: 48px; color: black;"></i>
-        <a href="https://www.kayak.com" target="_blank">Kayak Rentals and Tours</a>
-      </li>
-      <li class="d-flex align-items-start">
-        <i class="fa-solid fa-leaf me-2" style="font-size: 48px; color: black;"></i>
-        <a href="https://www.lonelyplanet.com/finland" target="_blank">Lonely Planet - Finland Guide</a>
-      </li>
-    </ul>
-  </div>
-</section>
-
+  </section>
 </div>
 
 <!-- Footer -->
