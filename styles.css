@@ -26,7 +26,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: url('images/hero-bg.jpg') center/cover no-repeat;
+  background: url('content/images/hero-bg.jpg') center/cover no-repeat;
 }
 
 .hero-section::before {
@@ -57,7 +57,7 @@ body {
    GENERAL SECTIONS
    ====================== */
 .section-bg {
-  background: url('images/section-bg.jpg') center/cover no-repeat;
+  background: url('content/images/section-bg.jpg') center/cover no-repeat;
   padding: 50px 0;
   color: white;
 }
