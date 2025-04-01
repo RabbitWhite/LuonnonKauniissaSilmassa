@@ -94,39 +94,38 @@ document.addEventListener('DOMContentLoaded', function () {
   loadCarousel('images.json', 'galleryCarousel');
   loadCarousel('videos.json', 'videoCarousel');
 
-  // Handle click on any item to open the modal
-  document.addEventListener('click', function (e) {
+  document.addEventListener('click', function(e) {
     const modalContainer = e.target.closest('.open-modal');
-    if (!modalContainer) return;
-
-    const title = modalContainer.getAttribute('data-title');
-    const media = modalContainer.getAttribute('data-media');
-    const date = modalContainer.getAttribute('data-date');
-    const coordinates = modalContainer.getAttribute('data-coordinates');
-    const description = modalContainer.getAttribute('data-description');
-
-    document.getElementById('universalModalLabel').textContent = title;
-
-    const mediaContainer = document.querySelector('#universalModal .media-container');
-    if (media.match(/\.(mp4|webm|ogg)$/i)) {
-      mediaContainer.innerHTML = `
-        <video controls style="width:100%; height:100%; object-fit:cover;">
-          <source src="${media}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>`;
-    } else {
-      mediaContainer.innerHTML = `<img src="${media}" alt="${title}" style="width:100%; height:100%; object-fit:cover;">`;
+    if (modalContainer) {
+      // Retrieve data attributes
+      const title = modalContainer.getAttribute('data-title');
+      const media = modalContainer.getAttribute('data-media');
+      const date = modalContainer.getAttribute('data-date');
+      const coordinates = modalContainer.getAttribute('data-coordinates');
+      const description = modalContainer.getAttribute('data-description');
+  
+      // Update modal title and details
+      document.getElementById('universalModalLabel').textContent = title;
+      document.querySelector('.modal-date').textContent = "Date Taken: " + date;
+      document.querySelector('.modal-coordinates').textContent = "Coordinates: " + coordinates;
+      document.querySelector('.modal-description').textContent = description;
+  
+      // Instead of injecting the media, inject a button in the media container:
+      const mediaContainer = document.querySelector('#universalModal .media-container');
+      mediaContainer.innerHTML = `<button class="btn btn-sm btn-primary open-new-window">Open Media in New Window</button>`;
+      
+      // Attach click event for the button to open media in new window
+      const button = mediaContainer.querySelector('.open-new-window');
+      button.addEventListener('click', function() {
+        window.open(media, '_blank');
+      });
+      
+      // Open the modal
+      const modalEl = document.getElementById('universalModal');
+      const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+      modal.show();
     }
-
-    document.querySelector('.modal-date').textContent = "Date Taken: " + date;
-    document.querySelector('.modal-coordinates').textContent = "Coordinates: " + coordinates;
-    document.querySelector('.modal-description').textContent = description;
-
-    const modalEl = document.getElementById('universalModal');
-    const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
-    modal.show();
   });
-});
 
 // Collapse mobile nav menu after link click
 document.addEventListener('DOMContentLoaded', function () {
@@ -141,3 +140,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
