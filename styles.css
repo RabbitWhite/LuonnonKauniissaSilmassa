@@ -166,7 +166,7 @@ iframe {
   transform: translateY(-50%);
   flex: 0 0 auto;
 }
-
+/*
 .modal-body {
   display: flex;
   flex-direction: column;
@@ -176,7 +176,36 @@ iframe {
   background: rgba(128, 128, 128, 0.8);
   text-align: center;
 }
+  */
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+  }
 
+  .media-container {
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .details-container {
+    height: 40%;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+
+  /* For images or videos inside the media container */
+.media-container img,
+.media-container video {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+  /*
 .media-container {
   display: inline-flex;
   align-items: center;
@@ -198,10 +227,12 @@ iframe {
 .details-container {
   padding: 1rem;
   background: rgba(128, 128, 128, 0.8);
-  overflow-y: scroll; /* Enable vertical scrolling */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  overflow-y: scroll; / Enable vertical scrolling /
+  scrollbar-width: none; / Firefox /
+  -ms-overflow-style: none;  / Internet Explorer 10+ /
+  
 }
+*/
 
 /* For Chrome, Safari, and Opera */
 .details-container::-webkit-scrollbar {
