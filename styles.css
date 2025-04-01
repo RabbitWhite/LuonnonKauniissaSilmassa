@@ -197,8 +197,15 @@ iframe {
 
 .details-container {
   padding: 1rem;
-  background: rgba(128, 128, 128, 0.0);
-  overflow-y: auto;
+  background: rgba(128, 128, 128, 0.8);
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+/* For Chrome, Safari, and Opera */
+.details-container::-webkit-scrollbar {
+  display: none;
 }
 
 .details-container ul {
