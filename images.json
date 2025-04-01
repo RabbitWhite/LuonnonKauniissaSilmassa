@@ -1,21 +1,42 @@
 [
     {
       "title": "Suuri Kalliojärvi",
-      "media": "content/images/SuuriKalliojarvi_1_thumb.jpg",
+      "media": "content/images/SuuriKalliojarvi_1.jpg",
       "date": "2023-08-15",
       "coordinates": "45.6789, -122.3456",
       "description": "Details about this image."
     },
     {
       "title": "Karhutunturi",
-      "media": "content/images/Karhutunturi_1_thumb.jpg",
+      "media": "content/images/Karhutunturi_1.jpg",
       "date": "2023-08-15",
       "coordinates": "45.6789, -122.3456",
       "description": "Details about this image."
     },
     {
       "title": "Ruunaanjärvi",
-      "media": "content/images/Ruunaanjarvi_1_thumb.jpg",
+      "media": "content/images/Ruunaanjarvi_1.jpg",
+      "date": "2023-08-15",
+      "coordinates": "45.6789, -122.3456",
+      "description": "Details about this image."
+    },
+    {
+      "title": "Ruunaa",
+      "media": "content/images/Ruunaa_1.jpg",
+      "date": "2023-08-15",
+      "coordinates": "45.6789, -122.3456",
+      "description": "Details about this image."
+    },
+    {
+      "title": "Ruunaa",
+      "media": "content/images/Ruunaa_2.jpg",
+      "date": "2023-08-15",
+      "coordinates": "45.6789, -122.3456",
+      "description": "Details about this image."
+    },
+    {
+      "title": "Ruunaanjärvi",
+      "media": "content/images/Patvinsuo.jpg",
       "date": "2023-08-15",
       "coordinates": "45.6789, -122.3456",
       "description": "Details about this image."
