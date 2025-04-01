@@ -126,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
       modal.show();
     }
   });
+});
 
 // Collapse mobile nav menu after link click
 document.addEventListener('DOMContentLoaded', function () {
