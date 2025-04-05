@@ -15,6 +15,28 @@ body {
   height: 100vh;
 }
 
+/* Normal state */
+a {
+  color: #040404;
+  text-decoration: none;
+}
+
+/* Hover state */
+a:hover {
+  color: #4f2d20;
+  text-decoration: underline;
+}
+
+/* Visited links */
+a:visited {
+  color: #c6a781;
+}
+
+/* Active (clicked) state */
+a:active {
+  color: #45240c;
+}
+
 /* ======================
    HERO SECTION
    ====================== */
