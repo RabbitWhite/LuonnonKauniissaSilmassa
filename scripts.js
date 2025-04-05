@@ -112,7 +112,9 @@ document.addEventListener('DOMContentLoaded', function () {
   
       // Instead of injecting the media, inject a button in the media container:
       const mediaContainer = document.querySelector('#universalModal .media-container');
-      mediaContainer.innerHTML = `<button class="btn btn-sm btn-primary open-new-window">Open Media in New Window</button>`;
+      mediaContainer.innerHTML = 
+      `<button class="btn btn-sm btn-primary open-new-window">Open Media in New Window</button><br>
+      <button id="showOnMapButton" class="btn btn-secondary mt-3">Show on Map</button>`;
       
       // Attach click event for the button to open media in new window
       const button = mediaContainer.querySelector('.open-new-window');
@@ -120,15 +122,12 @@ document.addEventListener('DOMContentLoaded', function () {
         window.open(media, '_blank');
       });
 
-      // Inject a button in the media container to show location in map:
-      const mediaContainer2 = document.querySelector('#universalModal .media-container');
-      mediaContainer2.innerHTML = `<button class="btn btn-sm btn-primary open-new-window">Open Media in New Window</button>`;
-      
-      // Attach click event for the button to open media in new window
-      const button2 = mediaContainer2.querySelector('.open-new-window');
-      button2.addEventListener('click', function() {
-        goToMap(12.3456, 78.9012); // Replace with actual coordinates
-      });
+      // Attach event listener to the "Show on Map" button:
+    // Parse the coordinates string into numbers:
+    let [lat, lng] = coordinates.split(',').map(s => parseFloat(s.trim()));
+    document.getElementById('showOnMapButton').onclick = function() {
+      goToMap(lat, lng);
+    };
       
       // Open the modal
       const modalEl = document.getElementById('universalModal');
