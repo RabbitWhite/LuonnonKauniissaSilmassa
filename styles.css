@@ -179,6 +179,7 @@ iframe {
 
 .modal-title {
   margin: 0;
+  font-size: clamp(1rem, 2vw, 2rem);
 }
 
 .btn-close {
@@ -235,17 +236,20 @@ iframe {
   /* Details container occupies the remaining 40% */
   .details-container {
     height: 40%;
-    padding: 1rem;
+    padding: clamp(0.5rem, 2vw, 2rem);
     overflow-y: scroll; /* Enable vertical scrolling */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   display: block;
-  text-align: center;  
+  text-align: center; 
+
   }
 
   .media-container button {
     display: block;
     margin: 0 auto;
+    font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+    padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem);
   }
   /*
 .media-container {
