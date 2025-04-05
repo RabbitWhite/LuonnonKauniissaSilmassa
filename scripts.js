@@ -128,7 +128,8 @@ document.addEventListener('DOMContentLoaded', function () {
       const button2 = mediaContainer.querySelector('.open-new-window');
       button.addEventListener('click', function() {
         goToMap(12.3456, 78.9012); // Replace with actual coordinates
-      });      
+      });
+      
       // Open the modal
       const modalEl = document.getElementById('universalModal');
       const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
