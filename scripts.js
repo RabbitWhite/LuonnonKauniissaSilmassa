@@ -119,7 +119,16 @@ document.addEventListener('DOMContentLoaded', function () {
       button.addEventListener('click', function() {
         window.open(media, '_blank');
       });
+
+      // Inject a button in the media container to show location in map:
+      const mediaContainer2 = document.querySelector('#universalModal .media-container');
+      mediaContainer2.innerHTML = `<button class="btn btn-sm btn-primary open-new-window">Open Media in New Window</button>`;
       
+      // Attach click event for the button to open media in new window
+      const button2 = mediaContainer.querySelector('.open-new-window');
+      button.addEventListener('click', function() {
+        goToMap(12.3456, 78.9012); // Replace with actual coordinates
+      });      
       // Open the modal
       const modalEl = document.getElementById('universalModal');
       const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
