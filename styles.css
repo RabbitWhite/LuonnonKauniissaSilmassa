@@ -313,3 +313,13 @@ iframe {
 .open-modal:hover .overlay {
   opacity: 1;
 }
+
+/* Details container occupies the remaining 40% */
+.resources-container {
+  background: rgba(128, 128, 128, 0.8);
+  padding: 1rem;
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  display: block;
+}
