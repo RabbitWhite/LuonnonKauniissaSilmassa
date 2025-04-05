@@ -240,6 +240,12 @@ iframe {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   display: block;
+  text-align: center;  
+  }
+
+  .details-container button {
+    display: block;
+    margin: 0 auto;
   }
   /*
 .media-container {
