@@ -200,11 +200,14 @@ iframe {
 }
   */
   .modal-body {
-    display: block;
-    /*flex-direction: column;*/
-    height: 100%;
-    padding: 0;
-    align-items: center;
+    display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers children vertically */
+  align-items: center;     /* centers children horizontally */
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+
   }
   
   /* Media container takes exactly 60% of modal-body height */
