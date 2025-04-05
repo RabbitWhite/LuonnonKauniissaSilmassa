@@ -125,8 +125,8 @@ document.addEventListener('DOMContentLoaded', function () {
       mediaContainer2.innerHTML = `<button class="btn btn-sm btn-primary open-new-window">Open Media in New Window</button>`;
       
       // Attach click event for the button to open media in new window
-      const button2 = mediaContainer.querySelector('.open-new-window');
-      button.addEventListener('click', function() {
+      const button2 = mediaContainer2.querySelector('.open-new-window');
+      button2.addEventListener('click', function() {
         goToMap(12.3456, 78.9012); // Replace with actual coordinates
       });
       
