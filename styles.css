@@ -75,6 +75,11 @@ a:active {
   border-radius: 5px;
 }
 
+.lora-text {
+  margin-bottom: 1rem;         /* equivalent to Tailwind's mb-4 */
+  font-family: "Lora", serif;
+}
+
 /* ======================
    GENERAL SECTIONS
    ====================== */
