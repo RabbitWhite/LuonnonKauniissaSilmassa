@@ -163,7 +163,7 @@ iframe {
 .modal-content {
   position: relative;
   height: 100%;
-  background: rgba(128, 128, 128, 0.8);
+  background: rgba(128, 128, 128, 1);
   border: none;
   border-radius: 10px;
   overflow: hidden;
@@ -174,7 +174,7 @@ iframe {
   align-items: center;
   justify-content: center;
   position: relative;
-  background: rgba(128, 128, 128, 0.8);
+  background: rgba(128, 128, 128, 1);
   padding: 1rem;
   border-bottom: none;
 }
@@ -361,7 +361,7 @@ iframe {
 
 /* Details container occupies the remaining 40% */
 .resources-container {
-  background: rgba(128, 128, 128, 0.8);
+  background: rgba(128, 128, 128, 1);
   padding: 1rem;
   overflow-y: scroll; /* Enable vertical scrolling */
   scrollbar-width: none; /* Firefox */
