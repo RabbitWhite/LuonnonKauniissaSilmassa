@@ -37,6 +37,17 @@ a:active {
   color: #45240c;
 }
 
+/* For most modern browsers */
+.hide-scrollbar {
+  overflow: auto;
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 /* ======================
    HERO SECTION
    ====================== */
