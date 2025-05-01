@@ -4,7 +4,7 @@
       "media": "content/videos/Suuri_Kalliojarvi_1.mp4",
       "preview": "content/videos/Suuri_Kalliojarvi_1_thumb.jpg",
       "date": "2023-08-15",
-      "coordinates": "45.6789, -122.3456",
+      "coordinates": "62.493150, 30.072633",
       "description": "Details about this image."
     },
     {
@@ -12,7 +12,7 @@
       "media": "content/videos/Sompiojarvi_1.mp4",
       "preview": "content/videos/Sompiojarvi_1_thumb.jpg",
       "date": "2023-08-15",
-      "coordinates": "45.6789, -122.3456",
+      "coordinates": "68.088669, 27.449059",
       "description": "Details about this image."
     },
     {
@@ -20,7 +20,7 @@
         "media": "content/videos/Kylmaluoma_1.mp4",
         "preview": "content/videos/Kylmaluoma_1_thumb.jpg",
         "date": "2023-08-15",
-        "coordinates": "45.6789, -122.3456",
+        "coordinates": "65.586765, 28.893053",
         "description": "Details about this image 4."
     },
     {
@@ -28,7 +28,7 @@
       "media": "content/videos/PyhaNattanen_1.mp4",
       "preview": "content/videos/PyhaNattanen_1_thumb.jpg",
       "date": "2023-08-15",
-      "coordinates": "45.6789, -122.3456",
+      "coordinates": "68.122508, 27.369286",
       "description": "Details about this image."
     },
     {
@@ -36,7 +36,7 @@
         "media": "content/videos/Patvinsuo_1.mp4",
         "preview": "content/videos/Patvinsuo_1_thumb.jpg",
         "date": "2023-08-15",
-        "coordinates": "45.6789, -122.3456",
+        "coordinates": "63.108223, 30.700796",
         "description": "Details about this image 4."
     }
   ]
