@@ -8,17 +8,33 @@
       "description": "Details about this image."
     },
     {
-      "title": "Halti",
-      "media": "content/videos/Halti_1.mp4",
-      "preview": "content/videos/Halti_1_thumb.jpg",
+      "title": "Sompiojärvi",
+      "media": "content/videos/Sompiojarvi_1.mp4",
+      "preview": "content/videos/Sompiojarvi_1_thumb.jpg",
       "date": "2023-08-15",
       "coordinates": "45.6789, -122.3456",
       "description": "Details about this image."
     },
     {
-        "title": "Karhutunturi",
-        "media": "content/videos/Karhutunturi_1.mp4",
-        "preview": "content/videos/Karhutunturi_1_thumb.jpg",
+        "title": "Kylmäluoma",
+        "media": "content/videos/Kylmaluoma_1.mp4",
+        "preview": "content/videos/Kylmaluoma_1_thumb.jpg",
+        "date": "2023-08-15",
+        "coordinates": "45.6789, -122.3456",
+        "description": "Details about this image 4."
+    },
+    {
+      "title": "Pyhä Nattanen",
+      "media": "content/videos/PyhaNattanen_1.mp4",
+      "preview": "content/videos/PyhaNattanen_1_thumb.jpg",
+      "date": "2023-08-15",
+      "coordinates": "45.6789, -122.3456",
+      "description": "Details about this image."
+    },
+    {
+        "title": "Patvinsuo",
+        "media": "content/videos/Patvinsuo_1.mp4",
+        "preview": "content/videos/Patvinsuo_1_thumb.jpg",
         "date": "2023-08-15",
         "coordinates": "45.6789, -122.3456",
         "description": "Details about this image 4."
