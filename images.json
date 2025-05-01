@@ -2,44 +2,56 @@
     {
       "title": "Suuri Kalliojärvi",
       "media": "content/images/SuuriKalliojarvi_1.jpg",
-      "date": "2023-08-15",
+      "date": "2024-11-02",
       "coordinates": "62.494202, 30.071773",
-      "description": "Details about this image."
+      "description": "A serene lake surrounded by rugged rock formations 
+      and pine forest, Suuri Kalliojärvi offers peaceful short hiking route 
+      around it in the heart of North Karelia’s wild nature.."
     },
     {
       "title": "Karhutunturi",
       "media": "content/images/Karhutunturi_1.jpg",
-      "date": "2023-08-15",
+      "date": "2024-03-06",
       "coordinates": "67.201856, 29.115386",
-      "description": "Details about this image."
+      "description": "A peaceful fell rising from the taiga near the Russian border, 
+      Karhutunturi provides quiet hiking routes through rolling hills, boreal 
+      forest, and wide vistas typical of eastern Lapland."
     },
     {
       "title": "Ruunaanjärvi",
       "media": "content/images/Ruunaanjarvi_1.jpg",
-      "date": "2023-08-15",
+      "date": "2022-07-13",
       "coordinates": "63.402549, 30.577530",
-      "description": "Details about this image."
+      "description": "A tranquil lake at the heart of the Ruunaa area, Ruunaanjärvi 
+      is ideal for canoeing and fishing, with easy access to wilderness trails and 
+      scenic camping spots along its shores"
     },
     {
       "title": "Ruunaa",
       "media": "content/images/Ruunaa_1.jpg",
-      "date": "2023-08-15",
+      "date": "2020-05-10",
       "coordinates": "63.356704, 30.449296",
-      "description": "Details about this image."
+      "description": "A popular outdoor destination featuring white-water rapids, 
+      forest trails, and accessible wilderness, Ruunaa offers exciting canoeing 
+      adventures and hiking in untouched river landscapes."
     },
     {
       "title": "Ruunaa",
       "media": "content/images/Ruunaa_2.jpg",
       "date": "2023-08-15",
       "coordinates": "63.356704, 30.449296",
-      "description": "Details about this image."
+      "description": "A popular outdoor destination featuring white-water rapids, 
+      forest trails, and accessible wilderness, Ruunaa offers exciting canoeing 
+      adventures and hiking in untouched river landscapes."
     },
     {
       "title": "Patvinsuo",
       "media": "content/images/Patvinsuo_1.jpg",
-      "date": "2023-08-15",
+      "date": "2022-01-03",
       "coordinates": "63.108223, 30.700796",
-      "description": "Details about this image."
+      "description": "Known for its vast mires, old-growth forests, and clear 
+        lakes, Patvinsuo is a haven for birdwatchers, hikers, and canoeists looking 
+        to experience Finland’s diverse wetland ecosystems."
     }
   ]
   
