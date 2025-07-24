@@ -113,8 +113,8 @@ document.addEventListener('DOMContentLoaded', function () {
       // Instead of injecting the media, inject a button in the media container:
       const mediaContainer = document.querySelector('#universalModal .media-container');
       mediaContainer.innerHTML = 
-      `<button class="btn btn-sm btn-secondary lora-text open-new-window style="color:#212529">Open Media in New Window</button><br>
-      <button id="showOnMapButton" class="btn btn-secondary lora-text style="color:#212529">Show on Map</button>`;
+`<button class="btn btn-sm btn-secondary lora-text open-new-window">Open Media in New Window</button><br>
+<button id="showOnMapButton" class="btn btn-secondary lora-text">Show on Map</button>`;
       
       // Attach click event for the button to open media in new window
       const button = mediaContainer.querySelector('.open-new-window');

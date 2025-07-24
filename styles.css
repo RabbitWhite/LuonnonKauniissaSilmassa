@@ -282,6 +282,7 @@ iframe {
     margin: 0 auto;
     font-size: clamp(0.8rem, 1.5vw, 1.5rem);
     padding: clamp(0.5rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem);
+    color: #212529 !important; /* ensure override against Bootstrap's .btn-secondary white text */
   }
 
 /* For Chrome, Safari, and Opera */
@@ -337,4 +338,9 @@ iframe {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   display: block;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1); /* Turns white icons black */
 }
