@@ -194,7 +194,7 @@ iframe {
 .modal-content {
   position: relative;
   height: 100%;
-  background: rgba(128, 128, 128, 1);
+  background: rgb(190, 189, 189);
   border: none;
   border-radius: 10px;
   overflow: hidden;
@@ -205,7 +205,7 @@ iframe {
   align-items: center;
   justify-content: center;
   position: relative;
-  background: rgba(128, 128, 128, 1);
+  background: rgba(190, 189, 189);
   padding: 1rem;
   border-bottom: none;
 }
