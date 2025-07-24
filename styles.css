@@ -101,10 +101,31 @@ a:active {
 /* ======================
    GENERAL SECTIONS
    ====================== */
-.section-bg {
+/*  
+   .section-bg {
   background: url('content/images/section-bg.jpg') center/cover no-repeat;
   padding: 50px 0;
   color: white;
+}
+ */
+
+ .section-bg {
+  position: relative;
+  background: url('content/images/section-bg.jpg') center/cover no-repeat;
+  padding: 50px 0;
+  color: white;
+  z-index: 1;
+}
+
+.section-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.4); /* Light semi-transparent white */
+  z-index: -1;
 }
 
 section {
