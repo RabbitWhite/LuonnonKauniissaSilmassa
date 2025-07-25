@@ -344,3 +344,8 @@ iframe {
 .carousel-control-next-icon {
   filter: invert(1); /* Turns white icons black */
 }
+
+.modal-button-wrapper {
+  text-align: center;
+  margin-top: 1rem;
+}
