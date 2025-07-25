@@ -55,6 +55,18 @@ a:active {
 }
 
 /* ======================
+   NAVBAR
+   ====================== */
+
+.navbar-brand {
+  margin-left: 10px;
+}
+
+.navbar-brand img {
+  height: 5vh;
+}
+
+/* ======================
    HERO SECTION
    ====================== */
 .hero-section {
@@ -98,6 +110,10 @@ a:active {
   font-weight: bold;
 }
 
+.lora-text-heading {
+  color: #212529;
+}
+
 /* ======================
    GENERAL SECTIONS
    ====================== */
@@ -128,10 +144,16 @@ section {
   justify-content: center;
   scroll-snap-align: start;
 }
-
+/*
 .map-container {
   height: 400px;
   width: 100%;
+}
+*/
+
+#leafletMap {
+  width: 100%;
+  height: 100%;
 }
 
 .gallery img {
