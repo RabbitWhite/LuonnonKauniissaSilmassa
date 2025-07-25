@@ -109,13 +109,22 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector('.modal-date').textContent = "Date Taken: " + date;
       document.querySelector('.modal-coordinates').textContent = "Coordinates: " + coordinates;
       document.querySelector('.modal-description').textContent = description;
-  
+  /*
       // Instead of injecting the media, inject a button in the media container:
       const mediaContainer = document.querySelector('#universalModal .media-container');
       mediaContainer.innerHTML = 
 `<button class="btn btn-sm btn-secondary lora-text open-new-window">Open Media in New Window</button><br>
 <button id="showOnMapButton" class="btn btn-secondary lora-text">Show on Map</button>`;
-      
+    */
+      // Clone the template
+      const template = document.getElementById('modalButtonTemplate');
+      const clonedButtons = template.cloneNode(true);
+      clonedButtons.classList.remove('d-none');
+
+      // Clear existing content and inject cloned buttons
+      mediaContainer.innerHTML = '';
+      mediaContainer.appendChild(clonedButtons);
+/*
       // Attach click event for the button to open media in new window
       const button = mediaContainer.querySelector('.open-new-window');
       button.addEventListener('click', function() {
@@ -128,7 +137,20 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('showOnMapButton').onclick = function() {
       goToMap(lat, lng);
     };
+  */  
       
+      // Reattach event handlers
+      const openNewWindowBtn = clonedButtons.querySelector('.open-new-window');
+      openNewWindowBtn.addEventListener('click', function () {
+        window.open(media, '_blank');
+      });
+
+      // Attach event to "Show on Map" button
+      const showOnMapBtn = clonedButtons.querySelector('#showOnMapButtonTemplate');
+      let [lat, lng] = coordinates.split(',').map(s => parseFloat(s.trim()));
+      showOnMapBtn.onclick = function () {
+        goToMap(lat, lng);
+      };
       // Open the modal
       const modalEl = document.getElementById('universalModal');
       const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
