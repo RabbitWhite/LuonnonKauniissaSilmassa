@@ -109,9 +109,11 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector('.modal-date').textContent = "Date Taken: " + date;
       document.querySelector('.modal-coordinates').textContent = "Coordinates: " + coordinates;
       document.querySelector('.modal-description').textContent = description;
+        
+    const mediaContainer = document.querySelector('#universalModal .media-container');
   /*
       // Instead of injecting the media, inject a button in the media container:
-      const mediaContainer = document.querySelector('#universalModal .media-container');
+     
       mediaContainer.innerHTML = 
 `<button class="btn btn-sm btn-secondary lora-text open-new-window">Open Media in New Window</button><br>
 <button id="showOnMapButton" class="btn btn-secondary lora-text">Show on Map</button>`;
