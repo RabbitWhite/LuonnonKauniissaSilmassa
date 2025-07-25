@@ -112,6 +112,9 @@ a:active {
 
 .lora-text-heading {
   color: #212529;
+  margin-bottom: 1rem;         /* equivalent to Tailwind's mb-4 */
+  font-family: "Lora", serif;
+  font-weight: bold;
 }
 
 /* ======================
