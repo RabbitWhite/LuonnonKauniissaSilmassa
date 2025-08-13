@@ -1,63 +1,33 @@
-// Global variable for the Leaflet map instance
-window.map = null;
-window.currentMarker = null;
+// Utility function to escape HTML for security
+function escapeHTML(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+let map = null;
+let currentMarker = null;
 
 document.addEventListener('DOMContentLoaded', function () {
   console.log("DOM fully loaded, initializing Leaflet map.");
 
   // Initialize the Leaflet map centered on Patvinsuo National Park
-  window.map = L.map("map").setView([63.0577, 30.3464], 10);
+  map = L.map("map").setView([63.0577, 30.3464], 10);
 
   // Add OpenStreetMap tiles
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
     attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-  }).addTo(window.map);
+  }).addTo(map);
 
   // Add a default marker for Patvinsuo National Park
-  const marker = L.marker([63.11586232190913, 30.69928421435293]).addTo(window.map);
+  const marker = L.marker([63.11586232190913, 30.69928421435293]).addTo(map);
   marker.bindPopup('<b>Patvinsuo National Park</b><br>Experience the beauty of Finnish wetlands.').openPopup();
-});
 
-// Focus map on given coordinates and close modal if open
-function goToMap(lat, lng) {
-  if (!window.map) {
-    console.error("Map has not been initialized.");
-    return;
-  }
-
-  // Remove previous marker if it exists
-  if (window.currentMarker) {
-    window.map.removeLayer(window.currentMarker);
-  }
-
-  // Add new marker and center view
-  window.currentMarker = L.marker([lat, lng]).addTo(window.map);
-  window.map.setView([lat, lng], 13);
-
-  // Smooth scroll to map
-  document.getElementById("map").scrollIntoView({ behavior: 'smooth' });
-
-  // Close any open modals
-  document.querySelectorAll('.modal.show').forEach(modalEl => {
-    const modalInstance = bootstrap.Modal.getInstance(modalEl);
-    if (modalInstance) {
-      modalInstance.hide();
-    }
-  });
-
-  // Delay scroll to map for smoother transition after modal closes
-  setTimeout(() => {
-    document.getElementById('map').scrollIntoView({ behavior: 'smooth' });
-  }, 500);
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  /**
-   * Load carousel items dynamically from JSON
-   * @param {string} jsonUrl - URL to the JSON file
-   * @param {string} carouselId - ID of the carousel container
-   */
+  // Carousel loader
   function loadCarousel(jsonUrl, carouselId) {
     fetch(jsonUrl)
       .then(response => response.json())
@@ -73,99 +43,80 @@ document.addEventListener('DOMContentLoaded', function () {
           carouselItem.innerHTML = `
             <div class="text-center">
               <div class="open-modal position-relative" 
-                   data-title="${item.title}"
-                   data-media="${item.media}"
-                   data-date="${item.date}"
-                   data-coordinates="${item.coordinates}"
-                   data-description="${item.description}">
-                <img src="${thumbSrc}" alt="${item.title}" class="img-responsive mx-auto d-block">
+                   data-title="${escapeHTML(item.title)}"
+                   data-media="${escapeHTML(item.media)}"
+                   data-date="${escapeHTML(item.date)}"
+                   data-coordinates="${escapeHTML(item.coordinates)}"
+                   data-description="${escapeHTML(item.description)}"
+                   aria-label="Open details for ${escapeHTML(item.title)}">
+                <img src="${escapeHTML(thumbSrc)}" alt="${escapeHTML(item.title)}" class="img-responsive mx-auto d-block">
                 <div class="overlay"><span>Details</span></div>
               </div>
             </div>
           `;
-
           carouselInner.appendChild(carouselItem);
         });
       })
-      .catch(error => console.error('Error loading gallery data from ' + jsonUrl + ':', error));
+      .catch(error => {
+        console.error('Error loading gallery data from ' + jsonUrl + ':', error);
+        const carouselInner = document.querySelector(`#${carouselId} .carousel-inner`);
+        if (carouselInner) {
+          carouselInner.innerHTML = `<div class="text-danger text-center">Failed to load gallery.</div>`;
+        }
+      });
   }
 
-  // Load image and video carousels
   loadCarousel('images.json', 'galleryCarousel');
   loadCarousel('videos.json', 'videoCarousel');
 
+  // Modal event delegation
   document.addEventListener('click', function(e) {
     const modalContainer = e.target.closest('.open-modal');
     if (modalContainer) {
-      // Retrieve data attributes
       const title = modalContainer.getAttribute('data-title');
       const media = modalContainer.getAttribute('data-media');
       const date = modalContainer.getAttribute('data-date');
       const coordinates = modalContainer.getAttribute('data-coordinates');
       const description = modalContainer.getAttribute('data-description');
-  
-      // Update modal title and details
+
       document.getElementById('universalModalLabel').textContent = title;
       document.querySelector('.modal-date').textContent = "Date Taken: " + date;
       document.querySelector('.modal-coordinates').textContent = "Coordinates: " + coordinates;
       document.querySelector('.modal-description').textContent = description;
-        
-    const mediaContainer = document.querySelector('#universalModal .media-container');
-  /*
-      // Instead of injecting the media, inject a button in the media container:
-     
-      mediaContainer.innerHTML = 
-`<button class="btn btn-sm btn-secondary lora-text open-new-window">Open Media in New Window</button><br>
-<button id="showOnMapButton" class="btn btn-secondary lora-text">Show on Map</button>`;
-    */
-      // Clone the template
+
+      const mediaContainer = document.querySelector('#universalModal .media-container');
       const template = document.getElementById('modalButtonTemplate');
       const clonedButtons = template.cloneNode(true);
       clonedButtons.classList.remove('d-none');
-
-      // Clear existing content and inject cloned buttons
       mediaContainer.innerHTML = '';
       mediaContainer.appendChild(clonedButtons);
-/*
-      // Attach click event for the button to open media in new window
-      const button = mediaContainer.querySelector('.open-new-window');
-      button.addEventListener('click', function() {
-        window.open(media, '_blank');
-      });
 
-      // Attach event listener to the "Show on Map" button:
-    // Parse the coordinates string into numbers:
-    let [lat, lng] = coordinates.split(',').map(s => parseFloat(s.trim()));
-    document.getElementById('showOnMapButton').onclick = function() {
-      goToMap(lat, lng);
-    };
-  */  
-      
-      // Reattach event handlers
+      // Attach event handlers
       const openNewWindowBtn = clonedButtons.querySelector('.open-new-window');
-      openNewWindowBtn.addEventListener('click', function () {
-        window.open(media, '_blank');
-      });
+      if (openNewWindowBtn) {
+        openNewWindowBtn.addEventListener('click', function () {
+          window.open(media, '_blank');
+        });
+      }
 
-      // Attach event to "Show on Map" button
       const showOnMapBtn = clonedButtons.querySelector('#showOnMapButtonTemplate');
-      let [lat, lng] = coordinates.split(',').map(s => parseFloat(s.trim()));
-      showOnMapBtn.onclick = function () {
-        goToMap(lat, lng);
-      };
+      if (showOnMapBtn) {
+        let [lat, lng] = coordinates.split(',').map(s => parseFloat(s.trim()));
+        showOnMapBtn.onclick = function () {
+          goToMap(lat, lng);
+        };
+      }
+
       // Open the modal
       const modalEl = document.getElementById('universalModal');
       const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
       modal.show();
     }
   });
-});
 
-// Collapse mobile nav menu after link click
-document.addEventListener('DOMContentLoaded', function () {
+  // Collapse mobile nav menu after link click
   const navLinks = document.querySelectorAll('.nav-link');
   const navbarCollapse = document.querySelector('.navbar-collapse');
-
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       if (navbarCollapse.classList.contains('show')) {
@@ -174,4 +125,34 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+// Focus map on given coordinates and close modal if open
+function goToMap(lat, lng) {
+  if (!map) {
+    console.error("Map has not been initialized.");
+    return;
+  }
+
+  // Remove previous marker if it exists
+  if (currentMarker) {
+    map.removeLayer(currentMarker);
+  }
+
+  // Add new marker and center view
+  currentMarker = L.marker([lat, lng]).addTo(map);
+  map.setView([lat, lng], 13);
+
+  // Close any open modals
+  document.querySelectorAll('.modal.show').forEach(modalEl => {
+    const modalInstance = bootstrap.Modal.getInstance(modalEl);
+    if (modalInstance) {
+      modalInstance.hide();
+    }
+  });
+
+  // Smooth scroll to map after modal closes
+  setTimeout(() => {
+    document.getElementById('map').scrollIntoView({ behavior: 'smooth' });
+  }, 500);
+}
 
