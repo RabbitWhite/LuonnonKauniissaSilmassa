@@ -280,7 +280,7 @@ iframe {
 .details-container::-webkit-scrollbar {
   display: none;
 }
-details-container ul {
+.details-container ul {
   list-style: none;
   margin: 0;
   padding: 0;
