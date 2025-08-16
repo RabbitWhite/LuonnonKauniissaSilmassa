@@ -5,168 +5,168 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Luonnon kauniissa silmässä</title>
 
-  <!-- Stylesheets -->
+  <!-- External Stylesheets: Bootstrap, custom, Leaflet, FontAwesome -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="styles.css" rel="stylesheet" />
   <link href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 
-  <!-- Leaflet JS -->
+  <!-- External JS: Leaflet (for map) -->
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
 </head>
-<body >
+<body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">
-      <img src="content/images/navbar-icon.jpg" alt="Finnish Parks Icon" class="img-fluid"/>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link lora-text" href="#frontpage">Frontpage</a></li>
-        <li class="nav-item"><a class="nav-link lora-text" href="#images">Images</a></li>
-        <li class="nav-item"><a class="nav-link lora-text" href="#videos">Videos</a></li>
-        <li class="nav-item"><a class="nav-link lora-text" href="#map">Map</a></li>
-        <li class="nav-item"><a class="nav-link lora-text" href="#resources">Resources</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="scroll-container">
-
-  <!-- Frontpage Section -->
-  <section id="frontpage" class="hero-section">
-    <div class="hero-text">
-      <h1>Luonnon kauniissa silmässä</h1>
-      <blockquote>"Heaven is under our feet as well as over our heads."</blockquote>
-      <p>Henry David Thoreau</p>
-    </div>
-  </section>
-
-  <!-- Images Section -->
-  <section id="images" class="section-bg">
-    <div class="container">
-      <h2 class="text-center lora-text-heading">Images</h2>
-      <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner"><!-- Items injected via JS --></div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+  <!-- Navbar: Main site navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="content/images/navbar-icon.jpg" alt="Finnish Parks Icon" class="img-fluid"/>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link lora-text" href="#frontpage">Frontpage</a></li>
+          <li class="nav-item"><a class="nav-link lora-text" href="#images">Images</a></li>
+          <li class="nav-item"><a class="nav-link lora-text" href="#videos">Videos</a></li>
+          <li class="nav-item"><a class="nav-link lora-text" href="#map">Map</a></li>
+          <li class="nav-item"><a class="nav-link lora-text" href="#resources">Resources</a></li>
+        </ul>
       </div>
     </div>
-  </section>
+  </nav>
 
-  <!-- Universal Modal -->
-  <div class="modal fade" id="universalModal" tabindex="-1" aria-labelledby="universalModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <div class="modal-title-container">
-            <h5 class="modal-title" id="universalModalLabel">Title</h5>
-          </div>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="scroll-container">
+
+    <!-- Hero Section: Frontpage introduction -->
+    <section id="frontpage" class="hero-section">
+      <div class="hero-text">
+        <h1>Luonnon kauniissa silmässä</h1>
+        <blockquote>"Heaven is under our feet as well as over our heads."</blockquote>
+        <p>Henry David Thoreau</p>
+      </div>
+    </section>
+
+    <!-- Images Section: Gallery carousel -->
+    <section id="images" class="section-bg">
+      <div class="container">
+        <h2 class="text-center lora-text-heading">Images</h2>
+        <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner"><!-- Items injected via JS --></div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <div class="modal-body">
-  <!-- Media Container (will occupy 60% of modal height) -->
-  <div class="media-container">
-    <!-- Dynamic media content goes here (e.g., <img src="..." alt="...">) -->
-  </div>
-  <!-- Details Container (will occupy 40% of modal height) -->
-  <div class="details-container">
-    <ul>
-      <li class="modal-date"></li>
-      <li class="modal-coordinates"></li>
-    </ul>
-    <p class="modal-description"></p>
-  </div>
-</div>
+      </div>
+    </section>
+
+    <!-- Universal Modal: Reusable modal for media (images/videos) -->
+    <div class="modal fade" id="universalModal" tabindex="-1" aria-labelledby="universalModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-title-container">
+              <h5 class="modal-title" id="universalModalLabel">Title</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Media Container (will occupy 60% of modal height) -->
+            <div class="media-container">
+              <!-- Dynamic media content goes here (e.g., <img src="..." alt="...">) -->
+            </div>
+            <!-- Details Container (will occupy 40% of modal height) -->
+            <div class="details-container">
+              <ul>
+                <li class="modal-date"></li>
+                <li class="modal-coordinates"></li>
+              </ul>
+              <p class="modal-description"></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Videos Section -->
-  <section id="videos" class="section-bg">
-    <div class="container">
-      <h2 class="text-center lora-text-heading">Videos</h2>
-      <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner"><!-- Items injected via JS --></div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+    <!-- Videos Section: Video carousel -->
+    <section id="videos" class="section-bg">
+      <div class="container">
+        <h2 class="text-center lora-text-heading">Videos</h2>
+        <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner"><!-- Items injected via JS --></div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Map Section -->
-  <section id="map" class="section-bg">
-    <div class="container">
-      <h2 class="text-center lora-text">Find Us on the Map</h2>
-      <div id="leafletMap"></div>
-    </div>
-  </section>
+    <!-- Map Section: Leaflet map integration -->
+    <section id="map" class="section-bg">
+      <div class="container">
+        <h2 class="text-center lora-text">Find Us on the Map</h2>
+        <div id="leafletMap"></div>
+      </div>
+    </section>
 
-  <!-- Resources Section -->
-  <section id="resources" class="section-bg">
-    <div class="resources-container">
-      <h2 class="text-center lora-text-heading">Resources</h2>
-      <ul class="list-unstyled d-flex flex-column align-items-start">
-        <li class="d-flex align-items-start lora-text">
-          <i class="fa-solid fa-leaf lora-text" style="font-size: 48px; color: #212529; margin-right: 16px;"></i>
-          <a href="https://www.nationalparks.fi" target="_blank">Finnish National Parks Official Website</a>
-        </li>
-        <li class="d-flex align-items-start lora-text">
-          <i class="fa-solid fa-leaf lora-text" style="font-size: 48px; color: #212529; margin-right: 16px;"></i>
-          <a href="https://www.visitfinland.com" target="_blank">Visit Finland - Outdoor Activities</a>
-        </li>
-        <li class="d-flex align-items-start lora-text">
-          <i class="fa-solid fa-leaf lora-text" style="font-size: 48px; color: #212529; margin-right: 16px;"></i>
-          <a href="https://www.luontoon.fi" target="_blank">Explore Nature in Finland</a>
-        </li>
-        <li class="d-flex align-items-start lora-text">
-          <i class="fa-solid fa-leaf lora-text" style="font-size: 48px; color: #212529; margin-right: 16px;"></i>
-          <a href="https://www.kayak.com" target="_blank">Kayak Rentals and Tours</a>
-        </li>
-        <li class="d-flex align-items-start lora-text">
-          <i class="fa-solid fa-leaf lora-text" style="font-size: 48px; color: #212529; margin-right: 16px;"></i>
-          <a href="https://www.lonelyplanet.com/finland" target="_blank">Lonely Planet - Finland Guide</a>
-        </li>
-      </ul>
-    </div>
-  </section>
-</div>
-
-<!-- Footer -->
-<footer class="bg-dark text-white text-center lora-text">
-  <p>&copy; 2025 Seppo Nevalainen (S.Nevalainen@gmail.com) | All Rights Reserved</p>
-</footer>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="scripts.js" defer></script>
-
-<!-- Reusable Modal Button Template -->
-<div id="modalButtonTemplate" class="d-none">
-  <div class="modal-button-wrapper text-center">
-    <button class="btn btn-sm btn-secondary lora-text open-new-window">Open Media in New Window</button><br>
-    <button class="btn btn-secondary lora-text" id="showOnMapButtonTemplate">Show on Map</button>
+    <!-- Resources Section: External links -->
+    <section id="resources" class="section-bg">
+      <div class="resources-container">
+        <h2 class="text-center lora-text-heading">Resources</h2>
+        <ul class="list-unstyled d-flex flex-column align-items-start">
+          <li class="d-flex align-items-start lora-text">
+            <i class="fa-solid fa-leaf lora-text" style="font-size: 48px; color: #212529; margin-right: 16px;"></i>
+            <a href="https://www.nationalparks.fi" target="_blank">Finnish National Parks Official Website</a>
+          </li>
+          <li class="d-flex align-items-start lora-text">
+            <i class="fa-solid fa-leaf lora-text" style="font-size: 48px; color: #212529; margin-right: 16px;"></i>
+            <a href="https://www.visitfinland.com" target="_blank">Visit Finland - Outdoor Activities</a>
+          </li>
+          <li class="d-flex align-items-start lora-text">
+            <i class="fa-solid fa-leaf lora-text" style="font-size: 48px; color: #212529; margin-right: 16px;"></i>
+            <a href="https://www.luontoon.fi" target="_blank">Explore Nature in Finland</a>
+          </li>
+          <li class="d-flex align-items-start lora-text">
+            <i class="fa-solid fa-leaf lora-text" style="font-size: 48px; color: #212529; margin-right: 16px;"></i>
+            <a href="https://www.kayak.com" target="_blank">Kayak Rentals and Tours</a>
+          </li>
+          <li class="d-flex align-items-start lora-text">
+            <i class="fa-solid fa-leaf lora-text" style="font-size: 48px; color: #212529; margin-right: 16px;"></i>
+            <a href="https://www.lonelyplanet.com/finland" target="_blank">Lonely Planet - Finland Guide</a>
+          </li>
+        </ul>
+      </div>
+    </section>
   </div>
-</div>
+
+  <!-- Footer: Copyright -->
+  <footer class="bg-dark text-white text-center lora-text">
+    <p>&copy; 2025 Seppo Nevalainen (S.Nevalainen@gmail.com) | All Rights Reserved</p>
+  </footer>
+
+  <!-- Scripts: JS dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts.js" defer></script>
+
+  <!-- Modal Button Template: For dynamic modal actions -->
+  <div id="modalButtonTemplate" class="d-none">
+    <div class="modal-button-wrapper text-center">
+      <button class="btn btn-sm btn-secondary lora-text open-new-window">Open Media in New Window</button><br>
+      <button class="btn btn-secondary lora-text" id="showOnMapButtonTemplate">Show on Map</button>
+    </div>
+  </div>
 
 </body>
 </html>
