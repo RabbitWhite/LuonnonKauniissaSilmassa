@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
                    data-coordinates="${escapeHTML(item.coordinates)}"
                    data-description="${escapeHTML(item.description)}"
                    aria-label="Open details for ${escapeHTML(item.title)}">
-                <img src="${escapeHTML(thumbSrc)}" alt="${escapeHTML(item.title)}" class="img-responsive mx-auto d-block">
+                <img src="${escapeHTML(thumbSrc)}" alt="${escapeHTML(item.title)}" class="img-responsive mx-auto d-block" loading="lazy>
                 <div class="overlay"><span>Details</span></div>
               </div>
             </div>
