@@ -165,7 +165,7 @@ function goToMap(lat, lng) {
 
   // Smooth scroll to map after modal closes
   setTimeout(() => {
-    document.getElementById('map').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('location-map').scrollIntoView({ behavior: 'smooth' });
   }, 500);
 }
 
