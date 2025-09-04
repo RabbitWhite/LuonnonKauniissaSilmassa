@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
           const thumbSrc = item.preview ? item.preview : item.media;
 
-          // --- CHANGE: Use escapeHTML for all dynamic values and fix loading="lazy" quote ---
+          // Use escapeHTML for all dynamic values and fix loading="lazy" quote
           carouselItem.innerHTML = `
             <div class="text-center">
               <div class="open-modal position-relative" 
@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
               </div>
             </div>
           `;
-          // --- END CHANGE ---
           carouselInner.appendChild(carouselItem);
         });
       })
@@ -71,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
   loadCarousel('images.json', 'galleryCarousel');
   loadCarousel('videos.json', 'videoCarousel');
 
-  // Modal event delegation
+  // Modal event delegation (no inline handlers, only JS listeners)
   document.addEventListener('click', function(e) {
     const modalContainer = e.target.closest('.open-modal');
     if (modalContainer) {
@@ -95,18 +94,18 @@ document.addEventListener('DOMContentLoaded', function () {
       clonedButtons.classList.remove('d-none');
       mediaContainer.appendChild(clonedButtons);
 
-      // Attach event listeners to buttons
+      // Attach JS listeners (not inline handlers)
       const openNewWindowBtn = clonedButtons.querySelector('.open-new-window');
       if (openNewWindowBtn) {
-        openNewWindowBtn.onclick = function () {
+        openNewWindowBtn.addEventListener('click', function () {
           // Open media in new window/tab
           window.open(media, '_blank');
-        };
+        });
       }
 
       const showOnMapBtn = clonedButtons.querySelector('#showOnMapButtonTemplate');
       if (showOnMapBtn) {
-        showOnMapBtn.onclick = function () {
+        showOnMapBtn.addEventListener('click', function () {
           let [lat, lng] = coordinates.split(',').map(s => parseFloat(s.trim()));
           goToMap(lat, lng);
 
@@ -116,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
           if (modalInstance) {
             modalInstance.hide();
           }
-        };
+        });
       }
 
       // Do NOT append media automatically here
@@ -128,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Collapse mobile nav menu after link click
+  // Collapse mobile nav menu after link click (JS listeners only)
   const navLinks = document.querySelectorAll('.nav-link');
   const navbarCollapse = document.querySelector('.navbar-collapse');
   navLinks.forEach(link => {
