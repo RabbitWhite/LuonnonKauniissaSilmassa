@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   console.log("DOM fully loaded, initializing Leaflet map.");
 
   // Initialize the Leaflet map centered on Patvinsuo National Park
-  map = L.map("map").setView([63.0577, 30.3464], 10);
+  map = L.map("location-map").setView([63.0577, 30.3464], 10);
 
   // Add OpenStreetMap tiles
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
