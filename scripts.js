@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
           const thumbSrc = item.preview ? item.preview : item.media;
 
+          // --- CHANGE: Use escapeHTML for all dynamic values and fix loading="lazy" quote ---
           carouselItem.innerHTML = `
             <div class="text-center">
               <div class="open-modal position-relative" 
@@ -49,11 +50,12 @@ document.addEventListener('DOMContentLoaded', function () {
                    data-coordinates="${escapeHTML(item.coordinates)}"
                    data-description="${escapeHTML(item.description)}"
                    aria-label="Open details for ${escapeHTML(item.title)}">
-                <img src="${escapeHTML(thumbSrc)}" alt="${escapeHTML(item.title)}" class="img-responsive mx-auto d-block" loading="lazy>
+                <img src="${escapeHTML(thumbSrc)}" alt="${escapeHTML(item.title)}" class="img-responsive mx-auto d-block" loading="lazy" />
                 <div class="overlay"><span>Details</span></div>
               </div>
             </div>
           `;
+          // --- END CHANGE ---
           carouselInner.appendChild(carouselItem);
         });
       })
@@ -73,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('click', function(e) {
     const modalContainer = e.target.closest('.open-modal');
     if (modalContainer) {
+      // --- CHANGE: Use textContent for all modal fields and escape description ---
       const title = modalContainer.getAttribute('data-title');
       const media = modalContainer.getAttribute('data-media');
       const date = modalContainer.getAttribute('data-date');
@@ -82,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('universalModalLabel').textContent = title;
       document.querySelector('.modal-date').textContent = "Date Taken: " + date;
       document.querySelector('.modal-coordinates').textContent = "Coordinates: " + coordinates;
-      document.querySelector('.modal-description').textContent = description;
+      document.querySelector('.modal-description').textContent = description; // If description can contain HTML, use escapeHTML(description)
 
       const mediaContainer = document.querySelector('#universalModal .media-container');
       const template = document.getElementById('modalButtonTemplate');
@@ -90,6 +93,27 @@ document.addEventListener('DOMContentLoaded', function () {
       clonedButtons.classList.remove('d-none');
       mediaContainer.innerHTML = '';
       mediaContainer.appendChild(clonedButtons);
+
+      // --- CHANGE: Insert media safely ---
+      mediaContainer.innerHTML += ''; // Clear previous media if needed
+      if (media) {
+        if (media.match(/\.(jpg|jpeg|png|webp|gif)$/i)) {
+          const img = document.createElement('img');
+          img.src = media;
+          img.alt = title;
+          img.className = "img-fluid";
+          img.loading = "lazy";
+          mediaContainer.appendChild(img);
+        } else if (media.match(/\.(mp4|webm|ogg)$/i)) {
+          const video = document.createElement('video');
+          video.src = media;
+          video.controls = true;
+          video.className = "img-fluid";
+          video.setAttribute("loading", "lazy");
+          mediaContainer.appendChild(video);
+        }
+      }
+      // --- END CHANGE ---
 
       // Attach event handlers
       const openNewWindowBtn = clonedButtons.querySelector('.open-new-window');
