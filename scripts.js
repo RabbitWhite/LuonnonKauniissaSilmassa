@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('click', function(e) {
     const modalContainer = e.target.closest('.open-modal');
     if (modalContainer) {
-      // --- CHANGE: Use textContent for all modal fields and escape description ---
       const title = modalContainer.getAttribute('data-title');
       const media = modalContainer.getAttribute('data-media');
       const date = modalContainer.getAttribute('data-date');
@@ -85,51 +84,42 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('universalModalLabel').textContent = title;
       document.querySelector('.modal-date').textContent = "Date Taken: " + date;
       document.querySelector('.modal-coordinates').textContent = "Coordinates: " + coordinates;
-      document.querySelector('.modal-description').textContent = description; // If description can contain HTML, use escapeHTML(description)
+      document.querySelector('.modal-description').textContent = description;
 
       const mediaContainer = document.querySelector('#universalModal .media-container');
+      mediaContainer.innerHTML = '';
+
+      // Clone and append modal buttons
       const template = document.getElementById('modalButtonTemplate');
       const clonedButtons = template.cloneNode(true);
       clonedButtons.classList.remove('d-none');
-      mediaContainer.innerHTML = '';
       mediaContainer.appendChild(clonedButtons);
 
-      // --- CHANGE: Insert media safely ---
-      mediaContainer.innerHTML += ''; // Clear previous media if needed
-      if (media) {
-        if (media.match(/\.(jpg|jpeg|png|webp|gif)$/i)) {
-          const img = document.createElement('img');
-          img.src = media;
-          img.alt = title;
-          img.className = "img-fluid";
-          img.loading = "lazy";
-          mediaContainer.appendChild(img);
-        } else if (media.match(/\.(mp4|webm|ogg)$/i)) {
-          const video = document.createElement('video');
-          video.src = media;
-          video.controls = true;
-          video.className = "img-fluid";
-          video.setAttribute("loading", "lazy");
-          mediaContainer.appendChild(video);
-        }
-      }
-      // --- END CHANGE ---
-
-      // Attach event handlers
+      // Attach event listeners to buttons
       const openNewWindowBtn = clonedButtons.querySelector('.open-new-window');
       if (openNewWindowBtn) {
-        openNewWindowBtn.addEventListener('click', function () {
+        openNewWindowBtn.onclick = function () {
+          // Open media in new window/tab
           window.open(media, '_blank');
-        });
+        };
       }
 
       const showOnMapBtn = clonedButtons.querySelector('#showOnMapButtonTemplate');
       if (showOnMapBtn) {
-        let [lat, lng] = coordinates.split(',').map(s => parseFloat(s.trim()));
         showOnMapBtn.onclick = function () {
+          let [lat, lng] = coordinates.split(',').map(s => parseFloat(s.trim()));
           goToMap(lat, lng);
+
+          // Close modal after showing on map
+          const modalEl = document.getElementById('universalModal');
+          const modalInstance = bootstrap.Modal.getInstance(modalEl);
+          if (modalInstance) {
+            modalInstance.hide();
+          }
         };
       }
+
+      // Do NOT append media automatically here
 
       // Open the modal
       const modalEl = document.getElementById('universalModal');
