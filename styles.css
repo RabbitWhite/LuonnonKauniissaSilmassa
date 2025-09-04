@@ -1,3 +1,6 @@
+/* =====================
+   IMPORTS & FONTS
+   ===================== */
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
 
 /* =====================
@@ -9,7 +12,9 @@ body {
   overflow-y: scroll;
 }
 
-/* Scroll container for vertical snap and hidden scrollbar */
+/* =====================
+   SCROLL CONTAINER
+   ===================== */
 .scroll-container {
   scroll-snap-type: y mandatory; /* Enables vertical scroll snapping */
   overflow-y: scroll;
@@ -39,7 +44,9 @@ a:active {
   color: #45240c;
 }
 
-/* Utility: Hide scrollbar for modern browsers */
+/* =====================
+   UTILITY CLASSES
+   ===================== */
 .hide-scrollbar {
   overflow: auto;
   scrollbar-width: none; /* Firefox */
