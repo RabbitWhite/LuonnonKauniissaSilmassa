@@ -86,6 +86,7 @@ a:active {
   align-items: center;
   text-align: center;
   background: url('content/images/Page_Graphics/frontpage-bg.jpg') center/cover no-repeat;
+  scroll-snap-align: start;
 }
 .frontpage-section::before {
   content: "";
