@@ -141,7 +141,7 @@ a:active {
   background: rgba(255, 255, 255, 0.4); /* Light overlay */
   z-index: -1;
 }
-.contentpage {
+.contentpage-section {
   min-height: 100vh;
   display: flex;
   align-items: center;
