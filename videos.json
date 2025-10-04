@@ -1,40 +1,40 @@
 [
     {
       "title": "Suuri Kalliojärvi",
+      "mediapreview": "content/images/Preview_Images/Video_1_preview.webp",
       "media": "content/videos/Suuri_Kalliojarvi_1.mp4",
-      "preview": "content/videos/Suuri_Kalliojarvi_1_thumb.jpg",
       "date": "2024-11-02",
       "coordinates": "62.493150, 30.072633",
       "description": "A serene lake surrounded by rugged rock formations and pine forest, Suuri Kalliojärvi offers peaceful short hiking route around it in the heart of North Karelia’s wild nature."
     },
     {
       "title": "Sompiojärvi",
+      "mediapreview": "content/images/Preview_Images/Video_1_preview.webp",
       "media": "content/videos/Sompiojarvi_1.mp4",
-      "preview": "content/videos/Sompiojarvi_1_thumb.jpg",
       "date": "2024-06-27",
       "coordinates": "68.088669, 27.449059",
       "description": "Nestled within the Sompio Strict Nature Reserve, Sompiojärvi is a pristine wilderness lake framed by fell scenery and ancient folklore sites, ideal for quiet canoeing and nature observation."
     },
     {
         "title": "Kylmäluoma",
+        "mediapreview": "content/images/Preview_Images/Video_1_preview.webp",
         "media": "content/videos/Kylmaluoma_1.mp4",
-        "preview": "content/videos/Kylmaluoma_1_thumb.jpg",
         "date": "2024-06-26",
         "coordinates": "65.586765, 28.893053",
         "description": "A well-equipped outdoor area featuring deep forests, eskers, and clear fishing lakes, Kylmäluoma is perfect for hiking, canoeing, and family-friendly wilderness experiences."
     },
     {
       "title": "Pyhä Nattanen",
+      "mediapreview": "content/images/Preview_Images/Video_1_preview.webp",
       "media": "content/videos/PyhaNattanen_1.mp4",
-      "preview": "content/videos/PyhaNattanen_1_thumb.jpg",
       "date": "2024-06-28",
       "coordinates": "68.122508, 27.369286",
       "description": "A striking fell with dramatic boulder formations, Pyhä-Nattanen offers a rewarding hike with panoramic views over tundra and lakes—especially stunning during autumn colors or midnight sun."
     },
     {
         "title": "Patvinsuo",
+        "mediapreview": "content/images/Preview_Images/Video_1_preview.webp",
         "media": "content/videos/Patvinsuo_1.mp4",
-        "preview": "content/videos/Patvinsuo_1_thumb.jpg",
         "date": "2024-07-26",
         "coordinates": "63.108223, 30.700796",
         "description": "Known for its vast mires, old-growth forests, and clear lakes, Patvinsuo is a haven for birdwatchers, hikers, and canoeists looking to experience Finland’s diverse wetland ecosystems"
