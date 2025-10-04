@@ -75,9 +75,9 @@ a:active {
 }
 
 /* =====================
-   HERO SECTION
+   FRONT PAGE SECTION
    ===================== */
-.hero-section {
+.frontpage-section {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -85,9 +85,9 @@ a:active {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: url('content/images/hero-bg.jpg') center/cover no-repeat;
+  background: url('content/images/Page_Graphics/frontpage-bg.jpg') center/cover no-repeat;
 }
-.hero-section::before {
+.frontpage-section::before {
   content: "";
   position: absolute;
   top: 0;
@@ -122,16 +122,16 @@ a:active {
 }
 
 /* =====================
-   GENERAL SECTIONS
+   CONTET PAGE SECTIONS
    ===================== */
-.section-bg {
+.contentpage-bg {
   position: relative;
-  background: url('content/images/section-bg.jpg') center/cover no-repeat;
+  background: url('content/images/Page_Graphics/contentpage-bg.jpg') center/cover no-repeat;
   padding: 50px 0;
   color: white;
   z-index: 1;
 }
-.section-bg::before {
+.contentpage-bg::before {
   content: "";
   position: absolute;
   top: 0;
@@ -141,7 +141,7 @@ a:active {
   background: rgba(255, 255, 255, 0.4); /* Light overlay */
   z-index: -1;
 }
-section {
+.contentpage {
   min-height: 100vh;
   display: flex;
   align-items: center;
