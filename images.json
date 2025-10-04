@@ -1,6 +1,7 @@
 [
     {
       "title": "Suuri Kalliojärvi",
+      "media-preview": "content/images/Preview_Images/SuuriKalliojarvi_1_preview.webp",
       "media": "content/images/Actual_Images/SuuriKalliojarvi_1.webp",
       "date": "2024-11-02",
       "coordinates": "62.494202, 30.071773",
@@ -8,6 +9,7 @@
     },
     {
       "title": "Karhutunturi",
+      "media-preview": "content/images/Preview_Images/Karhutunturi_1_preview.webp",
       "media": "content/images/Actual_Images/Karhutunturi_1.webp",
       "date": "2024-03-06",
       "coordinates": "67.201856, 29.115386",
@@ -15,6 +17,7 @@
     },
     {
       "title": "Ruunaanjärvi",
+      "media-preview": "content/images/Preview_Images/Ruunaanjarvi_1_preview.webp",
       "media": "content/images/Actual_Images/Ruunaanjarvi_1.webp",
       "date": "2022-07-13",
       "coordinates": "63.402549, 30.577530",
@@ -22,6 +25,7 @@
     },
     {
       "title": "Ruunaa",
+      "media-preview": "content/images/Preview_Images/Ruunaa_1_preview.webp",
       "media": "content/images/Actual_Images/Ruunaa_1.webp",
       "date": "2020-05-10",
       "coordinates": "63.356704, 30.449296",
@@ -29,6 +33,7 @@
     },
     {
       "title": "Ruunaa",
+      "media-preview": "content/images/Preview_Images/Ruunaa_2_preview.webp",
       "media": "content/images/Actual_Images/Ruunaa_2.webp",
       "date": "2023-08-15",
       "coordinates": "63.356704, 30.449296",
@@ -36,6 +41,7 @@
     },
     {
       "title": "Patvinsuo",
+      "media-preview": "content/images/Preview_Images/Patvinsuo_1_preview.webp",
       "media": "content/images/Actual_Images/Patvinsuo_1.webp",
       "date": "2022-01-03",
       "coordinates": "63.108223, 30.700796",

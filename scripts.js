@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
           carouselItem.classList.add('carousel-item');
           if (index === 0) carouselItem.classList.add('active');
 
-          const thumbSrc = item.preview ? item.preview : item.media;
+          const thumbSrc = item.media-preview ? item.media-preview : item.media;
 
           // Use escapeHTML for all dynamic values and fix loading="lazy" quote
           carouselItem.innerHTML = `
