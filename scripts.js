@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }).addTo(map);
 
   // Add a default marker for Patvinsuo National Park
-  const marker = L.marker([63.11586232190913, 30.69928421435293]).addTo(map);
-  marker.bindPopup('<b>Patvinsuo National Park</b><br>Experience the beauty of Finnish wetlands.').openPopup();
+  //const marker = L.marker([63.11586232190913, 30.69928421435293]).addTo(map);
+  //marker.bindPopup('<b>Patvinsuo National Park</b><br>Experience the beauty of Finnish wetlands.').openPopup();
 
   // Carousel loader
   function loadCarousel(jsonUrl, carouselId) {
