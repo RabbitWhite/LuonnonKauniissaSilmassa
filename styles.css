@@ -164,8 +164,8 @@ iframe {
    ===================== */
 .carousel-inner img {
   max-height: 40vh;
-  width: auto;
-  max-width: 90vw;
+  /*width: auto;*/
+  max-width: 60vw;
   margin: 0 auto;
 }
 
