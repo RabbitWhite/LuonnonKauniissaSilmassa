@@ -165,6 +165,7 @@ iframe {
 .carousel-inner img {
   max-height: 40vh;
   width: auto;
+  max-width: 90vw;
   margin: 0 auto;
 }
 
@@ -179,6 +180,10 @@ iframe {
   margin: 3rem auto;
 }
 .modal-content {
+  width: 75vw;
+  height: 75vh;
+  max-width: 75vw;
+  max-height: 75vh;
   position: relative;
   height: 100%;
   background: rgb(190, 189, 189);
