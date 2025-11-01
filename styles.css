@@ -319,9 +319,59 @@ iframe {
 /* =====================
    CAROUSEL CONTROLS
    ===================== */
+
+.carousel-control-prev,
+.carousel-control-next {
+  /* larger circular hit area */
+  width: clamp(48px, 8vw, 64px);
+  height: clamp(48px, 8vw, 64px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* contrast against backgrounds */
+  background: rgba(0,0,0,0.45);
+  border: 2px solid rgba(255,255,255,0.9);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  z-index: 2000;
+
+  /* ensure vertical centering and smooth hover */
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background .15s ease, transform .12s ease;
+  opacity: 1;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(0,0,0,0.65);
+  transform: translateY(-50%) scale(1.03);
+}
+
+/* Make the chevron graphic bigger and thicker (use background-size) */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  filter: invert(1); /* Turns white icons black */
+  width: 60%;
+  height: 60%;
+  background-size: 100% 100%;
+  filter: invert(1); /* make icon light on dark bg */
+  /* small drop shadow to enhance contrast */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+/* On very small screens keep controls usable but not oversized */
+@media (max-width: 420px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 44px;
+    height: 44px;
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 64%;
+    height: 64%;
+  }
 }
 
 /* =====================
