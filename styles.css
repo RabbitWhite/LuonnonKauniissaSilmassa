@@ -355,9 +355,9 @@ iframe {
   width: 60%;
   height: 60%;
   background-size: 100% 100%;
-  filter: invert(1); /* make icon light on dark bg */
+  /*filter: invert(1);  make icon light on dark bg */
   /* small drop shadow to enhance contrast */
-  box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  /* box-shadow: 0 1px 2px rgba(0,0,0,0.5); */
 }
 
 /* On very small screens keep controls usable but not oversized */
