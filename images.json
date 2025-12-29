@@ -46,6 +46,34 @@
       "date": "2022-01-03",
       "coordinates": "63.108223, 30.700796",
       "description": "Known for its vast mires, old-growth forests, and clear lakes, Patvinsuo is a haven for birdwatchers, hikers, and canoeists looking to experience Finland’s diverse wetland ecosystems."
-    }
+    },
+    {
+      "title": "Ruktajävri",
+      "mediapreview": "content/images/Preview_Images/Ruktajavri_1_preview.webp",
+      "media": "content/images/Actual_Images/Ruktajavri_1.webp",
+      "date": "2025-10-17",
+      "coordinates": "69.455891, 26.293107",
+      "description": "A remote Arctic wilderness gem surrounded by tundra and fells, Ruktajärvi in Kevo Nature Reserve offers pristine lake scenery, silence, and a true sense of untouched northern nature."    },
+    {
+      "title": "Ruktajävri",
+      "mediapreview": "content/images/Preview_Images/Ruktajavri_2_preview.webp",
+      "media": "content/images/Actual_Images/Ruktajavri_2.webp",
+      "date": "2025-10-17",
+      "coordinates": "69.455891, 26.293107",
+      "description": "A remote Arctic wilderness gem surrounded by tundra and fells, Ruktajärvi in Kevo Nature Reserve offers pristine lake scenery, silence, and a true sense of untouched northern nature."    },
+    {
+      "title": "Ruktajävri",
+      "mediapreview": "content/images/Preview_Images/Ruktajavri_3_preview.webp",
+      "media": "content/images/Actual_Images/Ruktajavri_3.webp",
+      "date": "2025-10-17",
+      "coordinates": "69.455891, 26.293107",
+      "description": "A remote Arctic wilderness gem surrounded by tundra and fells, Ruktajärvi in Kevo Nature Reserve offers pristine lake scenery, silence, and a true sense of untouched northern nature."    },
+    {
+      "title": "Koli",
+      "mediapreview": "content/images/Preview_Images/Koli_preview.webp",
+      "media": "content/images/Actual_Images/Koli.webp",
+      "date": "2022-01-03",
+      "coordinates": "63.095151, 29.806363",
+      "description": "A renowned nature destination defined by sweeping hilltop views, ancient forests, and serene lakeshores, Koli National Park offers scenic hiking trails, iconic vistas over Lake Pielinen, and a timeless sense of Finnish wilderness."    }
   ]
   
