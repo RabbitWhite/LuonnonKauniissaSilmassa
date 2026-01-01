@@ -271,7 +271,7 @@ iframe {
 /* Image/video scales to fill container height while preserving aspect ratio */
 .media-container img,
 .media-container video {
-  height: 60%;
+  height: 30%;
   width: auto;
   align-items: center;
   justify-content: center;
@@ -281,7 +281,7 @@ iframe {
 }
 /* Details container occupies remaining 40% */
 .details-container {
-  height: 40%;
+  height: 70%;
   padding: clamp(0.5rem, 2vw, 2rem);
   overflow-y: scroll;
   scrollbar-width: none; /* Firefox */
