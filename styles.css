@@ -191,6 +191,39 @@ iframe {
   border-radius: 10px;
   overflow: hidden;
 }
+
+/* Increase modal header height and center content vertically */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: rgba(190, 189, 189);
+  padding: 40px 1rem; /* Increased vertical padding */
+  border-bottom: none;
+  min-height: 140px; /* Give the header more vertical space */
+}
+
+.modal-title-container {
+  flex: 1;
+  text-align: center;
+  font-family: var(--main-font);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Make title much larger and scale responsively */
+.modal-title {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-family: var(--main-font);
+  color: var(--main-color);
+  font-weight: bold;
+  line-height: 1.2;
+  word-wrap: break-word;
+}
+/*
 .modal-header {
   display: flex;
   align-items: center;
@@ -211,6 +244,8 @@ iframe {
   font-family: var(--main-font);
   color: var(--main-color);
 }
+*/
+
 .btn-close {
   position: absolute;
   right: 1rem;
