@@ -278,6 +278,30 @@ iframe {
   padding: 0;
 }
 
+@media (max-height: 500px) {
+  .modal-body {
+    overflow-y: auto; /* Allow scrolling in modal-body instead */
+  }
+
+  .modal-button-wrapper button {
+    font-size: clamp(0.6rem, 1.8vw, 0.8rem) !important;
+    padding: clamp(0.2rem, 0.5vw, 0.4rem) clamp(0.5rem, 1.2vw, 0.9rem) !important;
+  }
+
+  .details-container {
+    height: 70%; /* Increase to give more room */
+  }
+
+  .media-container {
+    height: 30%; /* Decrease to fit buttons */
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  .media-container::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* =====================
    CAROUSEL ITEM OVERLAY
    ===================== */
