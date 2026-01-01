@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector('.modal-coordinates').textContent = "Coordinates: " + coordinates;
       document.querySelector('.modal-description').textContent = description;
 
-      const mediaContainer = document.querySelector('#universalModal .details-container');
+      const mediaContainer = document.querySelector('#universalModal .media-container');
       mediaContainer.innerHTML = '';
 
       // Clone and append modal buttons
