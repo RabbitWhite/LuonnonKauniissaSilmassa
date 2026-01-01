@@ -256,11 +256,7 @@ iframe {
   overflow-y: scroll;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
-  /*display: block;
-  text-align: center;*/
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* Push content to bottom */
+  display: block;
   text-align: center;
   font-family: var(--main-font);
   color: var(--main-color);
