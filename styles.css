@@ -281,7 +281,7 @@ iframe {
 }
 /* Details container occupies remaining 40% */
 .details-container {
-  height: 70%;
+  height: 100%;
   padding: clamp(0.5rem, 2vw, 2rem);
   overflow-y: scroll;
   scrollbar-width: none; /* Firefox */
