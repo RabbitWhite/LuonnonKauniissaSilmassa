@@ -289,11 +289,11 @@ iframe {
   }
 
   .details-container {
-    height: 45%; /* Increase to give more room */
+    height: 55%; /* Increase to give more room */
   }
 
   .media-container {
-    height: 55%; /* Decrease to fit buttons */
+    height: 45%; /* Decrease to fit buttons */
     overflow-y: auto;
     scrollbar-width: none;
   }
