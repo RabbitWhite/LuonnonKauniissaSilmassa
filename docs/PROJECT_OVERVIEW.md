@@ -3,28 +3,28 @@
 <!-- STATUS:BEGIN -->
 ## Status
 
-- **Current milestone:** Initial content complete
-- **Working:** Single-page site loads and renders; image carousel (9 entries) and video carousel (5 entries) populate from JSON; Leaflet map initialises and responds to "Show on Map" from modal; Bootstrap modal opens on carousel item click; mobile nav collapse; responsive layout including small-screen carousel controls and landscape-phone modal adjustments; FontAwesome icons; About card with email and LinkedIn links; Resources section with five external links; GitHub Pages deployment from `main`.
-- **Scaffolded / incomplete:** `content/images/Actual_Images/Karhutunturi_1.webp` and `content/images/Preview_Images/Karhutunturi_1_preview.webp` are present on disk but have **no matching entry in `images.json`** — the location is unreachable from the carousel. `content/images/Preview_Images/Video_1_preview.webp` likewise has no JSON entry. `content/videos/` contains six `.mp4` files with paired `_Preview.jpg` files, but `videos.json` links only to YouTube URLs — the local `.mp4` files appear unused. The map default marker (Patvinsuo) is commented out in `scripts.js`.
-- **Known technical debt:** `scripts.js` initialises the map on `id="location-map"` (the `<section>` element) rather than `id="leafletMap"` (the inner `<div>`), which may produce sizing issues. Media displayed inside the modal is never actually rendered (the code explicitly notes "Do NOT append media automatically here" without a follow-up path for it). `styles.css` contains a typo in a section comment ("CONTET PAGE SECTIONS"). `.media-container img` / `.media-container video` height is set to `40%` but the parent has no fixed height, making the percentage non-functional.
-- **Next planned work:** Wire up Karhutunturi in `images.json`; decide whether local `.mp4` files or YouTube links are canonical for videos; resolve modal media rendering; add map marker for every JSON location.
+| Field | Detail |
+|---|---|
+| Current milestone | Initial content complete — deployed to GitHub Pages |
+| Working | Single-page layout, scroll-snap sections, image carousel, map section, Bootstrap responsive layout, JSON-driven media loading |
+| Scaffolded / incomplete | `Karhutunturi_1.webp` on disk but absent from `images.json`; `Video_1_preview.webp` has no JSON entry; six local `.mp4` files in `content/videos/` but `videos.json` uses YouTube URLs only |
+| Known technical debt | Map initialised on `id="location-map"` (`<section>`) instead of `id="leafletMap"` (`<div>`) — map silently fails to render; modal media never rendered — code path for appending image/video elements is missing; `.media-container` height set to 40% with no fixed-height parent — unreliable sizing |
+| Next planned work | Fix Leaflet map id mismatch; implement modal media render path; resolve local vs YouTube video inconsistency |
 <!-- STATUS:END -->
 
 ---
 
 ## Architecture Overview
 
-The site is a single-page application contained entirely in `index.html`. All six content areas (Frontpage, Images, Videos, Map, About, Resources) are `<section>` elements on one scrolling page, linked via an in-page `<nav>`. There is no build step, no templating engine, and no shared partial system — the header and footer are inlined directly in `index.html`. Dynamic content (carousels, map markers, modal details) is generated at runtime by `scripts.js` reading from two JSON data files.
+Single-page static site with no build step. All content is in one `index.html` file organised as six vertical scroll-snap sections. Media content (images and videos) is loaded dynamically from `images.json` and `videos.json` via `scripts.js`. Bootstrap CDN handles the grid and base layout; `styles.css` overrides for scroll-snap, modal sizing, carousel controls, and responsive breakpoints. Deployed directly from `main` to GitHub Pages with no CI step.
 
 ---
 
 ## Page Inventory
 
 | File | Purpose | Notes |
-|------|---------|-------|
-| `index.html` | Single entry point; contains all six sections | Fully self-contained; no sub-pages or includes. Sections: `#frontpage`, `#images-gallery`, `#videos-gallery`, `#location-map`, `#info-section`, `#external-resources`. |
-
-There is only one HTML file. The site is not multi-page.
+|---|---|---|
+| `index.html` | Single entry point — entire site | Six scroll-snap sections: hero, image carousel, map, video, info card, resources. No sub-pages, no templating. |
 
 ---
 
@@ -33,30 +33,33 @@ There is only one HTML file. The site is not multi-page.
 ### Styles
 
 | File | Scope | Notes |
-|------|-------|-------|
-| `styles.css` | Global — all sections | Custom overrides on top of Bootstrap. Defines CSS variables (`--main-font`, `--main-color`, `--accent-color`), scroll-snap layout, carousel controls, modal sizing, info card, resources container, and responsive breakpoints at 768 px and 480 px. Imports Lora from Google Fonts. |
-| Bootstrap 5.3.0-alpha1 (CDN) | Global — layout/components | Loaded with SRI hash. Provides grid, navbar, carousel, modal, and utility classes. |
-| Leaflet 1.9.3 (CDN) | Map section only | Required stylesheet for Leaflet map tiles and controls. |
-| FontAwesome 6.0.0 (CDN) | Icons | Used for nav leaf icons and contact links (envelope, LinkedIn). |
+|---|---|---|
+| `styles.css` | Global | Scroll-snap container and section sizing, modal dimensions, carousel controls, info card layout, responsive breakpoints. Bootstrap CDN loaded separately via `<link>` in `index.html`. |
 
 ### Scripts
 
 | File | Purpose | Notes |
-|------|---------|-------|
-| `scripts.js` | All runtime behaviour | `escapeHTML()` XSS sanitiser; Leaflet map init (`DOMContentLoaded`); `loadCarousel()` — fetches JSON and injects carousel items for both galleries; modal open/populate via event delegation on `.open-modal`; "Open in New Window" and "Show on Map" modal button wiring; mobile nav auto-collapse; `goToMap()` — places a marker and smooth-scrolls to map section. |
-| Bootstrap bundle 5.3.0-alpha1 (CDN) | Bootstrap JS + Popper | Required for carousel, modal, and collapse behaviour. Loaded with SRI hash. |
-| Leaflet 1.9.3 (CDN) | Map rendering | Loaded with `defer` and SRI hash. |
+|---|---|---|
+| `scripts.js` | All interactivity | Leaflet map initialisation, carousel loading from `images.json`, modal wiring, `escapeHTML()` XSS guard, `goToMap()` scroll helper. Video section loads from `videos.json`. |
+
+### Data
+
+| File | Purpose | Notes |
+|---|---|---|
+| `images.json` | Image carousel entries | 9 entries. `Karhutunturi_1.webp` exists on disk but is absent from this file. |
+| `videos.json` | Video section entries | 5 entries, all YouTube URLs. Six local `.mp4` files exist in `content/videos/` but are not referenced here — inconsistency unresolved. |
 
 ---
 
 ## Deployment
 
-The site is hosted on **GitHub Pages** served directly from the `main` branch of `github.com/RabbitWhite/LuonnonKauniissaSilmassa`, with no build step. The live URL is `https://rabbitwhite.github.io/LuonnonKauniissaSilmassa`. There is no CNAME file (no custom domain configured). Deployment is triggered by pushing to `main`; the `content/` directory and all JSON files are part of the repository and served as static assets.
+Hosted on GitHub Pages, deployed directly from the `main` branch. No build step, no bundler, no CNAME. The site root is the repo root. Pushing to `main` is a deploy. No `dist/` directory — everything served as-is.
 
 ---
 
 ## Re-entry Notes
 
-- Read `AGENTS.md` first — it documents the stack, directory layout, coding constraints (no framework, no npm), and agent behaviour rules (always show diff before applying).
-- Read `images.json` and `videos.json` before touching carousel or modal logic; all media is driven from these files and must not be hardcoded in HTML.
-- The only JavaScript file is `scripts.js`; search for `escapeHTML` before rendering any user-facing or data-driven string — it must be applied to all dynamic HTML insertion.
+- Start with `scripts.js` — it owns all runtime behaviour. Understanding the carousel loader and modal wiring gives you the full picture quickly.
+- `images.json` and `videos.json` are the content layer — adding or changing media means editing these files, not `index.html`.
+- The Leaflet map id mismatch (`location-map` vs `leafletMap`) means the map section will appear blank in the browser until fixed — do not mistake this for a missing asset issue.
+- Browser verification still needed: modal media rendering, Leaflet map sizing and display, and reachability of the five external resource links in the Resources section.
