@@ -54,3 +54,27 @@ No build step required.
 ## Agent Behavior
 - Always show diff and wait for approval before applying changes
 - Never push directly to main without explicit instruction
+
+## Discord MCP Missions
+These rules apply to any task that uses the Discord MCP server tools.
+
+### Capability Check — Run Before Any Other Steps
+- Call discord_list_servers to confirm the bot is connected and retrieve the guild ID. The guild ID is also available in the DISCORD_GUILD_ID environment variable.
+- Call discord_get_server_info to verify the bot has the permissions required for the planned operations. Check the following before proceeding:
+  - Creating, editing, or deleting channels: requires Manage Channels
+  - Managing roles: requires Manage Roles
+  - Sending or managing messages: requires Send Messages and View Channel
+  - Creating or managing webhooks: requires Manage Webhooks
+- List the available MCP tools and confirm every tool the mission requires is present in the manifest. If any required tool is missing, stop and report — do not attempt workarounds such as delete-and-recreate in place of a rename.
+- If any capability check fails, stop immediately and report what is missing. Do not proceed with partial execution.
+
+### Safety Rules
+- Never delete an existing channel, message, role, or webhook unless the brief explicitly instructs it and explicitly acknowledges that the action is irreversible and may result in permanent loss of message history or configuration.
+- Never rename a channel via delete-and-recreate without explicit instruction acknowledging history loss. A true rename (preserving history) requires the edit_channel tool — if that tool is not available, stop and report rather than substituting delete-and-recreate.
+- Do one operation at a time. Confirm success of each operation before proceeding to the next.
+- Do not modify any channel, role, or permission that is not explicitly listed in the mission brief.
+
+### Common Guild Information
+- Bot name: DevHub Agent#0197
+- Guild ID: available in DISCORD_GUILD_ID environment variable
+- Server name: My Dev Hub
